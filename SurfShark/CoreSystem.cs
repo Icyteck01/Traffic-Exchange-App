@@ -29,13 +29,14 @@ namespace SurfShark
         {
             main = this;
             InitializeComponent();
+            /*
             if (!NetworkManager.Connected)
             {
                 NetworkManager.Start();
             }
             if (!CoreSystem.LoggedIn)
             {
-                Component.login.Show();
+                Forms.login.Show();
             }
 
             Statustct.Text = ProgramVars.stat;
@@ -47,6 +48,7 @@ namespace SurfShark
             this.aTimer.Elapsed += new ElapsedEventHandler(this.OnTimedEvent);
             this.aTimer.Enabled = false;
             this.aTimer.Stop();
+            */
         }
 
         public void NetSend(string message, int module, int cmd)
@@ -70,7 +72,7 @@ namespace SurfShark
                 int totalTIme = 1000 * time;
                 this.aTimer.Interval = totalTIme;
                 this.aTimer.Enabled = true;
-                Component.surf.Navigate_to(url);
+                Forms.surf.Navigate_to(url);
             }
         }
         private void OnTimedEvent(object source, ElapsedEventArgs e)
@@ -80,34 +82,34 @@ namespace SurfShark
                 type = (int)TransitOperation.GET_SITE,
                 value = oldSiteId,
                 seconds = oldSeconds,
-                region = Component.getRegion()
+                region = Forms.getRegion()
             });
         }
 
         internal static void Resize_window()
         {
 
-            if (Component.main.WindowState == FormWindowState.Minimized)
+            if (Forms.main.WindowState == FormWindowState.Minimized)
             {
                 if (!NetworkManager.Connected)
                 {
-                    if (Component.login.IsDisposed)
+                    if (Forms.login.IsDisposed)
                     {
-                        Component.login = new LoginDialog();
+                        Forms.login = new LoginDialog();
                     }
-                    Component.login.Show();
+                    Forms.login.Show();
                 }
                 else
                 {
-                    Component.main.WindowState = FormWindowState.Normal;
-                    Component.main.ShowInTaskbar = true;
+                    Forms.main.WindowState = FormWindowState.Normal;
+                    Forms.main.ShowInTaskbar = true;
                 }
 
             }
             else
             {
-                Component.main.WindowState = FormWindowState.Minimized;
-                Component.main.ShowInTaskbar = false;
+                Forms.main.WindowState = FormWindowState.Minimized;
+                Forms.main.ShowInTaskbar = false;
             }
 
         }
@@ -115,14 +117,14 @@ namespace SurfShark
         {
             if (!startedToSurf)
             {
-                if (!Component.surf.IsDisposed)
+                if (!Forms.surf.IsDisposed)
                 {
-                    Component.surf.Show();
+                    Forms.surf.Show();
                 }
                 else
                 {
-                    Component.surf = new MainProgram();
-                    Component.surf.Show();
+                    Forms.surf = new MainProgram();
+                    Forms.surf.Show();
                 }
                 CoreSystem.Resize_window();
                 startedToSurf = true;
@@ -185,10 +187,10 @@ namespace SurfShark
             MemberTypExd.Text = ProgramVars.typeTxt;
             CoreSystem.LoggedIn = true;
             */
-            Component.login.Invoke(new MethodInvoker(delegate ()
+            Forms.login.Invoke(new MethodInvoker(delegate ()
             {
-                Component.main.Show();
-                Component.login.Close();
+                Forms.main.Show();
+                Forms.login.Close();
             }));
           //  Component.saveLastLogin(LoginDialog.Username, LoginDialog.Password);
         }
@@ -225,12 +227,12 @@ namespace SurfShark
                             ProgramVars.typeTxt = ProgramVars.type == 0 ? "Normal Shark" : "Super Shark";
                             MemberTypExd.Text = ProgramVars.typeTxt;
                             CoreSystem.LoggedIn = true;
-                            Component.login.Invoke(new MethodInvoker(delegate ()
+                            Forms.login.Invoke(new MethodInvoker(delegate ()
                             {
-                                Component.main.Show();
-                                Component.login.Close();
+                                Forms.main.Show();
+                                Forms.login.Close();
                             }));
-                            Component.saveLastLogin(LoginDialog.Username, LoginDialog.Password);
+                            Forms.saveLastLogin(LoginDialog.Username, LoginDialog.Password);
                         }
                         else
                         {
@@ -281,7 +283,7 @@ namespace SurfShark
                                 {
                                     ProgramVars.siteClasses = JsonConvert.DeserializeObject<List<SiteClass>>(jsonString);
                                 }
-                                Component.main.Invoke(new MethodInvoker(delegate ()
+                                Forms.main.Invoke(new MethodInvoker(delegate ()
                                 {
                                     UrlUtilityForm form2 = new UrlUtilityForm();
                                     form2.Show();
@@ -291,7 +293,7 @@ namespace SurfShark
                             }
                             else
                             {
-                                Component.main.Invoke(new MethodInvoker(delegate ()
+                                Forms.main.Invoke(new MethodInvoker(delegate ()
                                 {
                                     UrlUtilityForm.LoginDialogInstance.PopulateList();
                                 }));
@@ -309,25 +311,25 @@ namespace SurfShark
                         {
                            // ProgramVars.chatList = JsonConvert.DeserializeObject<List<ChatResponse>>(jsonStringx);
                         }
-                        Component.main.Invoke(new MethodInvoker(delegate ()
+                        Forms.main.Invoke(new MethodInvoker(delegate ()
                         {
-                            if (!Component.chat.IsDisposed)
+                            if (!Forms.chat.IsDisposed)
                             {
-                                Component.chat.StartPosition = FormStartPosition.Manual;
-                                Component.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Component.chat.Width,
-                                                       Screen.PrimaryScreen.WorkingArea.Height - Component.chat.Height);
-                                Component.chat.Show();
+                                Forms.chat.StartPosition = FormStartPosition.Manual;
+                                Forms.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Forms.chat.Width,
+                                                       Screen.PrimaryScreen.WorkingArea.Height - Forms.chat.Height);
+                                Forms.chat.Show();
                             }
                             else
                             {
-                                Component.chat = new ChatWindow();
-                                Component.chat.StartPosition = FormStartPosition.Manual;
-                                Component.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Component.chat.Width,
-                                                       Screen.PrimaryScreen.WorkingArea.Height - Component.chat.Height);
-                                Component.chat.Show();
+                                Forms.chat = new ChatWindow();
+                                Forms.chat.StartPosition = FormStartPosition.Manual;
+                                Forms.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Forms.chat.Width,
+                                                       Screen.PrimaryScreen.WorkingArea.Height - Forms.chat.Height);
+                                Forms.chat.Show();
                                 chatLoaded = false;
                             }
-                            Component.chat.LoadAll();
+                            Forms.chat.LoadAll();
                             if (CoreSystem.startedToSurf)
                             {
                                 CoreSystem.Resize_window();
@@ -338,22 +340,22 @@ namespace SurfShark
                     {
                         if (CoreSystem.chatEnabled)
                         {
-                            Component.main.Invoke(new MethodInvoker(delegate ()
+                            Forms.main.Invoke(new MethodInvoker(delegate ()
                             {
-                                if (!Component.chat.IsDisposed)
+                                if (!Forms.chat.IsDisposed)
                                 {
-                                    Component.chat.StartPosition = FormStartPosition.Manual;
-                                    Component.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Component.chat.Width,
-                                                           Screen.PrimaryScreen.WorkingArea.Height - Component.chat.Height);
-                                    Component.chat.Show();
+                                    Forms.chat.StartPosition = FormStartPosition.Manual;
+                                    Forms.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Forms.chat.Width,
+                                                           Screen.PrimaryScreen.WorkingArea.Height - Forms.chat.Height);
+                                    Forms.chat.Show();
                                 }
                                 else
                                 {
-                                    Component.chat = new ChatWindow();
-                                    Component.chat.StartPosition = FormStartPosition.Manual;
-                                    Component.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Component.chat.Width,
-                                                           Screen.PrimaryScreen.WorkingArea.Height - Component.chat.Height);
-                                    Component.chat.Show();
+                                    Forms.chat = new ChatWindow();
+                                    Forms.chat.StartPosition = FormStartPosition.Manual;
+                                    Forms.chat.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Forms.chat.Width,
+                                                           Screen.PrimaryScreen.WorkingArea.Height - Forms.chat.Height);
+                                    Forms.chat.Show();
                                     chatLoaded = false;
                                 }
                                 string jsonStringx = Encrypt.Decode(defRes.message);
@@ -362,7 +364,7 @@ namespace SurfShark
                                 //    ProgramVars.chatList = JsonConvert.DeserializeObject<List<ChatResponse>>(jsonStringx);
                                 }
                                 CoreSystem.canSendChat = true;
-                                Component.chat.LoadAll();
+                                Forms.chat.LoadAll();
                             }));
                         }
                     }
@@ -381,9 +383,9 @@ namespace SurfShark
 
         private void Myurls_Click(object sender, EventArgs e)
         {
-            if (Component.util.Visible)
+            if (Forms.util.Visible)
             {
-                Component.util.Hide();
+                Forms.util.Hide();
                 CoreSystem.Resize_window();
             }
             else

@@ -8,7 +8,7 @@ using WindowsFormsApplication1;
 
 namespace SurfShark
 {
-    internal static class Component
+    internal static class Forms
     {
         // public static CoreSystem main;
         // public static LoginDialog login;

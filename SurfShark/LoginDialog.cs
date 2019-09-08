@@ -18,7 +18,7 @@ namespace SurfShark
             LoginDialogInstance = this;
             InitializeComponent();
             LoginDialog.CheckForIllegalCrossThreadCalls = false;
-            LoginInfo li = Component.getLastLogin();
+            LoginInfo li = Forms.getLastLogin();
             if (li != null)
             {
                 Autologin(li);
@@ -110,7 +110,7 @@ namespace SurfShark
                 return;
             }
             notice.Text = "Please wait...";
-            string loginInfo = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\",\"hardwereKey\":\"" + Component.getHwKey() + "\",\"country\":\"" + Component.getRegion() + "\"}";
+            string loginInfo = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\",\"hardwereKey\":\"" + Forms.getHwKey() + "\",\"country\":\"" + Forms.getRegion() + "\"}";
 
             if (!NetworkManager.Connected)
             {
@@ -217,7 +217,7 @@ namespace SurfShark
             {
                 Email = username,
                 Passwrod = password,
-                HwId = Component.getHwKey()
+                HwId = Forms.getHwKey()
             });
         }
 

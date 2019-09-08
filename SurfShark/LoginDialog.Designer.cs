@@ -33,16 +33,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDialog));
             this.RegisterTabPage = new JHUI.Controls.JTabControl();
             this.loginPage = new JHUI.Controls.JTabPage();
-            this.pictureBox1 = new JHUI.Controls.JPictureBox();
             this.textBox2 = new JHUI.Controls.JTextBox();
             this.textBox1 = new JHUI.Controls.JTextBox();
             this.button1 = new JHUI.Controls.JButton();
+            this.pictureBox1 = new JHUI.Controls.JPictureBox();
             this.RegisterPage = new JHUI.Controls.JTabPage();
-            this.pictureBox2 = new JHUI.Controls.JPictureBox();
             this.textBox5 = new JHUI.Controls.JTextBox();
             this.textBox3 = new JHUI.Controls.JTextBox();
             this.textBox4 = new JHUI.Controls.JTextBox();
             this.button2 = new JHUI.Controls.JButton();
+            this.pictureBox2 = new JHUI.Controls.JPictureBox();
             this.notice = new JHUI.Controls.JTextBox();
             this.RegisterTabPage.SuspendLayout();
             this.loginPage.SuspendLayout();
@@ -53,20 +53,20 @@
             // 
             // RegisterTabPage
             // 
-            jAnimation1.AnimateOnlyDifferences = false;
+            jAnimation1.AnimateOnlyDifferences = true;
             jAnimation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.BlindCoeff")));
             jAnimation1.LeafCoeff = 0F;
             jAnimation1.MaxTime = 1F;
             jAnimation1.MinTime = 0F;
             jAnimation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.MosaicCoeff")));
             jAnimation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.MosaicShift")));
-            jAnimation1.MosaicSize = 0;
-            jAnimation1.Padding = new System.Windows.Forms.Padding(0);
+            jAnimation1.MosaicSize = 20;
+            jAnimation1.Padding = new System.Windows.Forms.Padding(30);
             jAnimation1.RotateCoeff = 0F;
             jAnimation1.RotateLimit = 0F;
             jAnimation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.ScaleCoeff")));
             jAnimation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.SlideCoeff")));
-            jAnimation1.TimeCoeff = 1F;
+            jAnimation1.TimeCoeff = 0F;
             jAnimation1.TransparencyCoeff = 0F;
             this.RegisterTabPage.ChangeAnimation = jAnimation1;
             this.RegisterTabPage.Controls.Add(this.loginPage);
@@ -79,12 +79,13 @@
             this.RegisterTabPage.Style = JHUI.JColorStyle.White;
             this.RegisterTabPage.TabIndex = 0;
             this.RegisterTabPage.TabStop = false;
-            this.RegisterTabPage.Theme = JHUI.JThemeStyle.Dark;
+            this.RegisterTabPage.Theme = JHUI.JThemeStyle.Light;
             this.RegisterTabPage.UseSelectable = true;
             this.RegisterTabPage.SelectedIndexChanged += new System.EventHandler(this.RegisterTabPage_SelectedIndexChanged);
             // 
             // loginPage
             // 
+            this.loginPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.loginPage.Controls.Add(this.textBox2);
             this.loginPage.Controls.Add(this.textBox1);
             this.loginPage.Controls.Add(this.button1);
@@ -99,24 +100,9 @@
             this.loginPage.TabIndex = 0;
             this.loginPage.Text = "Login";
             this.loginPage.Theme = JHUI.JThemeStyle.Dark;
-            this.loginPage.UseVisualStyleBackColor = true;
             this.loginPage.VerticalScrollbarBarColor = true;
             this.loginPage.VerticalScrollbarHighlightOnWheel = false;
             this.loginPage.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::SurfShark.Properties.Resources.splash;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(166, -5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(363, 366);
-            this.pictureBox1.Style = JHUI.JColorStyle.White;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Theme = JHUI.JThemeStyle.Dark;
             // 
             // textBox2
             // 
@@ -219,6 +205,20 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(166, -5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(363, 366);
+            this.pictureBox1.Style = JHUI.JColorStyle.White;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Theme = JHUI.JThemeStyle.Dark;
+            // 
             // RegisterPage
             // 
             this.RegisterPage.Controls.Add(this.textBox5);
@@ -240,21 +240,6 @@
             this.RegisterPage.VerticalScrollbarBarColor = true;
             this.RegisterPage.VerticalScrollbarHighlightOnWheel = false;
             this.RegisterPage.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::SurfShark.Properties.Resources.splash;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(166, -5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(363, 366);
-            this.pictureBox2.Style = JHUI.JColorStyle.White;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Theme = JHUI.JThemeStyle.Dark;
             // 
             // textBox5
             // 
@@ -401,6 +386,21 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.BTNRegister_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(166, -5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(363, 366);
+            this.pictureBox2.Style = JHUI.JColorStyle.White;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Theme = JHUI.JThemeStyle.Dark;
+            // 
             // notice
             // 
             this.notice.BackColor = System.Drawing.Color.White;
@@ -453,21 +453,21 @@
             // 
             // LoginDialog
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(718, 512);
             this.Controls.Add(this.RegisterTabPage);
             this.Controls.Add(this.notice);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.JControlBoxButonSize = new System.Drawing.Size(19, 19);
-            this.JControlBoxType = JHUI.Forms.JControlBoxType.CUSTOMIZABLE;
             this.Location = new System.Drawing.Point(718, 512);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(718, 512);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(718, 512);
             this.Name = "LoginDialog";
+            this.PaintTopBorder = false;
             this.Resizable = false;
             this.Text = "Welcome back";
+            this.UseCustomBackColor = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginDialog_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginDialog_KeyDown);

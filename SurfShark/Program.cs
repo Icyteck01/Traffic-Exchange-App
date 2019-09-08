@@ -1,4 +1,5 @@
 ﻿using SurfShark;
+using SurfShark.Core;
 using System;
 using System.Windows.Forms;
 
@@ -14,14 +15,17 @@ namespace WindowsFormsApplication1
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
+            new MainComponent();
+            Application.Run();
+            return;
             try
             {
 
-                Component.login = new LoginDialog();
-                Component.main = new CoreSystem();
-                Component.surf = new MainProgram();
-                Component.util = new UrlUtilityForm();
-                Component.chat = new ChatWindow();
+                Forms.login = new LoginDialog();
+                Forms.main = new CoreSystem();
+                Forms.surf = new MainProgram();
+                Forms.util = new UrlUtilityForm();
+                Forms.chat = new ChatWindow();
 
                 Notifier = new NotifyIcon
                 {
@@ -30,7 +34,7 @@ namespace WindowsFormsApplication1
                 Notifier.ContextMenu = new ContextMenu(new MenuItem[]
                 {
                     new MenuItem("Show", (s, e) => {
-                        Component.main.WindowState = FormWindowState.Normal;
+                        Forms.main.WindowState = FormWindowState.Normal;
                     }),
                     new MenuItem("Exit", (s, e) => {
                         Notifier.Visible = false;

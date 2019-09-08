@@ -1,6 +1,8 @@
 ﻿using JHSNetProtocol;
 using SurfShark;
 using SurfShark.Communication.Packets;
+using SurfShark.Core;
+using SurfShark.Core.Constants;
 using SurfShark.programs;
 using SurfSharkServer.Communication.Constants;
 using System;
@@ -84,10 +86,7 @@ public class NetworkManager
             switch(packet.Code)
             {
                 case ErrorCodes.SUCCESS:
-                    Component.main.Invoke(new MethodInvoker(delegate ()
-                    {
-                        Component.main.LoginCompleate(packet);
-                    }));
+                    MainComponent.Core.SendNotification(ProgramConst.SHOW_MAIN, packet);
                     break;
                 case ErrorCodes.WRONG_PASSWORD:
                     LoginDialog.LoginDialogInstance.Error("Wrong username or password!");
