@@ -1,9 +1,12 @@
-﻿using NHibernate;
+﻿using CommonDB;
+using NHibernate;
 using NHibernate.Cfg;
 using SurfSharkServer.com;
+using SurfSharkServer.MySQL.Tables;
 using System;
 using System.Collections.Concurrent;
 using System.IO;
+using System.Linq;
 
 public class UserManager
 {
@@ -28,52 +31,43 @@ public class UserManager
     }
 
 
-    protected ConcurrentDictionary<uint, User> Users_ConId = new ConcurrentDictionary<uint, User>();
+    protected ConcurrentDictionary<uint, User> ConnectedUsers = new ConcurrentDictionary<uint, User>();
     protected ConcurrentDictionary<string, uint> Users_UserName = new ConcurrentDictionary<string, uint>();
-    protected ConcurrentDictionary<string, uint> Users_HWKEY = new ConcurrentDictionary<string, uint>();
     public UserManager()
     {
 
     }
+
     public User GetUserByConnectionId(uint connectionId)
     {
-        if (Users_ConId.TryGetValue(connectionId, out User val))
+        if (ConnectedUsers.TryGetValue(connectionId, out User val))
             return val;
         return null;
     }
-    public User GetUserByNameId(string UserName)
+
+    public User GetUserByName(string UserName)
     {
-        if (Users_UserName.TryGetValue(UserName, out uint val))
-            return GetUserByConnectionId(val);
-        return null;
-    }
-    public User GetUserHarwereKeyId(string UserName)
-    {
-        if (Users_HWKEY.TryGetValue(UserName, out uint val))
-            return GetUserByConnectionId(val);
+        ISession session = DbService.GetDBSession;
+        if(session != null && session.IsConnected)
+        {
+            UserAccounts account = session.QueryOver<UserAccounts>().Where(x => x.userName == UserName).List().FirstOrDefault();
+            if (account != null)
+                return new User(account);
+        }
         return null;
     }
 
     public void AddOnline(uint ConnectionId, User user)
     {
-        Users_ConId.TryAdd(ConnectionId, user);
-        Users_UserName.TryAdd(user.UserName, ConnectionId);
-        Users_HWKEY.TryAdd(user.Hwid, ConnectionId);
+        ConnectedUsers.TryAdd(ConnectionId, user);
     }
 
     public void RemoveOnline(uint connectionId)
     {
-        if (Users_ConId.TryGetValue(connectionId, out User u))
+        if (ConnectedUsers.TryRemove(connectionId, out User x1))
         {
-            Users_ConId.TryRemove(connectionId, out User x1);
-            Users_UserName.TryRemove(u.UserName, out uint x2);
-            Users_HWKEY.TryRemove(u.Hwid, out uint x3);
-        }
-    }
 
-    public User GetUserFromDatabase(string username)
-    {
-        return null;
+        }
     }
 }
 

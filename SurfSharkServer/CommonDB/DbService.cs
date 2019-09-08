@@ -223,6 +223,7 @@ namespace CommonDB
         {
             Instance.IUpdateEntityIntime<T>(Key, Entity);
         }
+
         public static T GetFromCache<T>(uint Key)
         {
             return Instance.GetEntity<T>(Key);

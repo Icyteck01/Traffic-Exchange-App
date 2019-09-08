@@ -181,6 +181,7 @@
     <Compile Include="ChatWindow.Designer.cs">
       <DependentUpon>ChatWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Communication\Constants\ErrorCodes.cs" />
     <Compile Include="Communication\NetworkManager.cs" />
     <Compile Include="Communication\Packets\Login.cs" />
     <Compile Include="Communication\Packets\Register.cs" />
@@ -352,6 +353,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\GrooveShark.ico" />
+    <None Include="img\JHS LARGE.png" />
+    <None Include="img\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="CefSharp">

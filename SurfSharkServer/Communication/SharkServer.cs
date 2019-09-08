@@ -1,8 +1,8 @@
 ﻿using JHSNetProtocol;
+using SurfSharkServer;
 using SurfSharkServer.com;
 using SurfSharkServer.NetworkHandlers;
 using System.Collections.Generic;
-
 
 public class SharkServer
 {
@@ -32,6 +32,7 @@ public class SharkServer
     {
         if (!m_MessageHandlersDict.ContainsKey(id))
         {
+            JHSNetworkServer.RegisterHandler(id, OnNetworkReceive);
             m_MessageHandlersDict[id] = handler;
         }
         else
@@ -49,10 +50,14 @@ public class SharkServer
     public void Connect()
     {
         JHSNetworkServer.RegisterHandler(InternalMessages.DISCONNECT, OnDisconnect);
-        JHSNetworkServer.RegisterHandler(InternalMessages.RECIEVE, OnNetworkReceive);
+    //    JHSNetworkServer.RegisterHandler(InternalMessages.RECIEVE, OnNetworkReceive);
         RegisterHandeler(NetworkConstants.LOGIN, new LoginHandler());
         RegisterHandeler(NetworkConstants.REGISTER, new RegisterHandler());
-        JHSNetworkServer.Start("0.0.0.0");
+        string ListenIP = Program.configs.GetValue<string>("HOST");
+        int ListenPort = Program.configs.GetValue<int>("PORT");
+        int password = Program.configs.GetValue<int>("ServerPassword");
+        int Version = Program.configs.GetValue<int>("Version");
+        JHSNetworkServer.Start(ListenIP, ListenPort);
     }
 
     private void OnNetworkReceive(JHSNetworkMessage netMsg)

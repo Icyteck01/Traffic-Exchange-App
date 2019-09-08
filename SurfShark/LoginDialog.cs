@@ -119,12 +119,22 @@ namespace SurfShark
             }
             NetworkManager.Send(NetworkConstants.LOGIN, new Login()
             {
-                Email = username,
-                Passwrod = password,
-                HwId = Component.getHwKey(),
-                Region = Component.getRegion()
+                UserName = username,
+                Password = password,
             });
             notice.Text = "Please wait...";
+        }
+
+        public void ShowMSG(string v)
+        {
+            if (notice.InvokeRequired)
+            {
+                notice.Invoke((MethodInvoker)(() => {
+                    ShowMSG(v); 
+                }));
+                return;
+            }
+            JMessageBox.Show(this, v);
         }
 
         private void TextBox2_Click(object sender, EventArgs e)
@@ -140,7 +150,6 @@ namespace SurfShark
                 Application.Exit();
                 Environment.Exit(0);
             }
-
         }
 
         private void LoginDialog_FormClosed(object sender, FormClosedEventArgs e)
@@ -212,9 +221,44 @@ namespace SurfShark
             });
         }
 
-
+        public void Error(string msg)
+        {
+            if(notice.InvokeRequired)
+            {
+                notice.Invoke((MethodInvoker)(() => { Error(msg); }));
+                return;
+            }
+            notice.Text = msg;
+        }
         public static string Username { get; set; }
 
         public static string Password { get; set; }
+
+        private void RegisterTabPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(RegisterTabPage.SelectedIndex == 0)
+            {
+                Text = "Welcome back";
+            }
+            else
+            {
+                Text = "Join us";
+            }
+        }
+
+        private void LoginDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (RegisterTabPage.SelectedIndex == 0)
+                {
+                    ButtonLogin_Click(null, null);
+                }
+                else
+                {
+                    BTNRegister_Click(null, null);
+                }
+            }
+        }
     }
 }

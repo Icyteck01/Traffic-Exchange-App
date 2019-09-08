@@ -1,11 +1,15 @@
 ﻿using JHSNetProtocol;
 using SurfShark;
+using SurfShark.Communication.Packets;
 using SurfShark.programs;
+using SurfSharkServer.Communication.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Timers;
+using System.Windows.Forms;
+using Timer = System.Timers.Timer;
 
 public class NetworkManager
 {
@@ -33,7 +37,7 @@ public class NetworkManager
 
     public void Connect()
     {
-        JHSNetworkClient.Start("127.0.0.1");
+        JHSNetworkClient.Start("127.0.0.1", 10000);
         JHSNetworkClient.RegisterHandler(InternalMessages.CONNECTED, CONNECTED_TO_SERVER);
         JHSNetworkClient.RegisterHandler(InternalMessages.DISCONNECT, DISCONNECTED_PERMANENT);
         JHSNetworkClient.RegisterHandler(InternalMessages.DISCONNECT_BUT_WILL_RECONNECT, DISCONNECTED_FROM_SERVER);
@@ -57,21 +61,40 @@ public class NetworkManager
     private void DISCONNECTED_FROM_SERVER(JHSNetworkMessage netMsg)
     {
         Connected = false;
+       
     }
 
     private void DISCONNECTED_PERMANENT(JHSNetworkMessage netMsg)
     {
         Connected = false;
+        Connect();
     }
 
     private void CONNECTED_TO_SERVER(JHSNetworkMessage netMsg)
     {
         Connected = true;
+        LoginDialog.LoginDialogInstance.Error("Connected to server."); 
     }
 
     private void OnLogin(JHSNetworkMessage netMsg)
     {
-
+        Login packet = netMsg.ReadMessage<Login>();
+        if (packet != null)
+        {
+            switch(packet.Code)
+            {
+                case ErrorCodes.SUCCESS:
+                    Component.main.Invoke(new MethodInvoker(delegate ()
+                    {
+                        Component.main.LoginCompleate(packet);
+                    }));
+                    break;
+                case ErrorCodes.WRONG_PASSWORD:
+                    LoginDialog.LoginDialogInstance.Error("Wrong username or password!");
+                    LoginDialog.LoginDialogInstance.ShowMSG("Wrong username or password!");
+                    break;
+            }
+        }
     }
 
     public static void Send(short module, JHSMessageBase packet)

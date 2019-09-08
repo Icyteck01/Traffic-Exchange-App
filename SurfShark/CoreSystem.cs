@@ -166,6 +166,33 @@ namespace SurfShark
             CoreSystem.Resize_window();
         }
 
+        public void LoginCompleate(Login packet)
+        {
+            /*
+            Statustct.Text = "Connected";
+            this.Minutes.Text = dr.minutes / 60 + " ";
+            Surfed.Text = "" + dr.surfed;
+            User.Text = "" + dr.message;
+            ProgramVars.stat = "Connected";
+            ProgramVars.surfed = "" + dr.surfed;
+            ProgramVars.user = "" + dr.message;
+            ProgramVars.minutes = dr.minutes;
+            ProgramVars.type = dr.type;
+            ProgramVars.regions = dr.regions.Split(',');
+            CoreSystem.userID = dr.uid;
+            ProgramVars.ratioTxt = ProgramVars.type == 0 ? 70 : 100;
+            ProgramVars.typeTxt = ProgramVars.type == 0 ? "Normal Shark" : "Super Shark";
+            MemberTypExd.Text = ProgramVars.typeTxt;
+            CoreSystem.LoggedIn = true;
+            */
+            Component.login.Invoke(new MethodInvoker(delegate ()
+            {
+                Component.main.Show();
+                Component.login.Close();
+            }));
+          //  Component.saveLastLogin(LoginDialog.Username, LoginDialog.Password);
+        }
+
         private void ProcessMessage(BaseSocket bs)
         {
             int module = bs.module;

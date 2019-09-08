@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            JHUI.JAnimation jAnimation2 = new JHUI.JAnimation();
+            JHUI.JAnimation jAnimation1 = new JHUI.JAnimation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDialog));
             this.RegisterTabPage = new JHUI.Controls.JTabControl();
             this.loginPage = new JHUI.Controls.JTabPage();
-            this.notice = new JHUI.Controls.JTextBox();
             this.pictureBox1 = new JHUI.Controls.JPictureBox();
             this.textBox2 = new JHUI.Controls.JTextBox();
             this.textBox1 = new JHUI.Controls.JTextBox();
@@ -44,6 +43,7 @@
             this.textBox3 = new JHUI.Controls.JTextBox();
             this.textBox4 = new JHUI.Controls.JTextBox();
             this.button2 = new JHUI.Controls.JButton();
+            this.notice = new JHUI.Controls.JTextBox();
             this.RegisterTabPage.SuspendLayout();
             this.loginPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,22 +53,22 @@
             // 
             // RegisterTabPage
             // 
-            jAnimation2.AnimateOnlyDifferences = false;
-            jAnimation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.BlindCoeff")));
-            jAnimation2.LeafCoeff = 0F;
-            jAnimation2.MaxTime = 1F;
-            jAnimation2.MinTime = 0F;
-            jAnimation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.MosaicCoeff")));
-            jAnimation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.MosaicShift")));
-            jAnimation2.MosaicSize = 0;
-            jAnimation2.Padding = new System.Windows.Forms.Padding(0);
-            jAnimation2.RotateCoeff = 0F;
-            jAnimation2.RotateLimit = 0F;
-            jAnimation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.ScaleCoeff")));
-            jAnimation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.SlideCoeff")));
-            jAnimation2.TimeCoeff = 1F;
-            jAnimation2.TransparencyCoeff = 0F;
-            this.RegisterTabPage.ChangeAnimation = jAnimation2;
+            jAnimation1.AnimateOnlyDifferences = false;
+            jAnimation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.BlindCoeff")));
+            jAnimation1.LeafCoeff = 0F;
+            jAnimation1.MaxTime = 1F;
+            jAnimation1.MinTime = 0F;
+            jAnimation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.MosaicCoeff")));
+            jAnimation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.MosaicShift")));
+            jAnimation1.MosaicSize = 0;
+            jAnimation1.Padding = new System.Windows.Forms.Padding(0);
+            jAnimation1.RotateCoeff = 0F;
+            jAnimation1.RotateLimit = 0F;
+            jAnimation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.ScaleCoeff")));
+            jAnimation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.SlideCoeff")));
+            jAnimation1.TimeCoeff = 1F;
+            jAnimation1.TransparencyCoeff = 0F;
+            this.RegisterTabPage.ChangeAnimation = jAnimation1;
             this.RegisterTabPage.Controls.Add(this.loginPage);
             this.RegisterTabPage.Controls.Add(this.RegisterPage);
             this.RegisterTabPage.Location = new System.Drawing.Point(6, 63);
@@ -79,15 +79,16 @@
             this.RegisterTabPage.Style = JHUI.JColorStyle.White;
             this.RegisterTabPage.TabIndex = 0;
             this.RegisterTabPage.TabStop = false;
-            this.RegisterTabPage.Theme = JHUI.JThemeStyle.Light;
+            this.RegisterTabPage.Theme = JHUI.JThemeStyle.Dark;
             this.RegisterTabPage.UseSelectable = true;
+            this.RegisterTabPage.SelectedIndexChanged += new System.EventHandler(this.RegisterTabPage_SelectedIndexChanged);
             // 
             // loginPage
             // 
-            this.loginPage.Controls.Add(this.pictureBox1);
             this.loginPage.Controls.Add(this.textBox2);
             this.loginPage.Controls.Add(this.textBox1);
             this.loginPage.Controls.Add(this.button1);
+            this.loginPage.Controls.Add(this.pictureBox1);
             this.loginPage.HorizontalScrollbarBarColor = true;
             this.loginPage.HorizontalScrollbarHighlightOnWheel = false;
             this.loginPage.HorizontalScrollbarSize = 10;
@@ -97,11 +98,308 @@
             this.loginPage.Style = JHUI.JColorStyle.White;
             this.loginPage.TabIndex = 0;
             this.loginPage.Text = "Login";
-            this.loginPage.Theme = JHUI.JThemeStyle.Light;
+            this.loginPage.Theme = JHUI.JThemeStyle.Dark;
             this.loginPage.UseVisualStyleBackColor = true;
             this.loginPage.VerticalScrollbarBarColor = true;
             this.loginPage.VerticalScrollbarHighlightOnWheel = false;
             this.loginPage.VerticalScrollbarSize = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SurfShark.Properties.Resources.splash;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(166, -5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(363, 366);
+            this.pictureBox1.Style = JHUI.JColorStyle.White;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Theme = JHUI.JThemeStyle.Dark;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderBottomLineSize = 5;
+            this.textBox2.BorderColor = System.Drawing.Color.Black;
+            this.textBox2.BottomLineOffset = new System.Drawing.Size(3, 3);
+            // 
+            // 
+            // 
+            this.textBox2.CustomButton.Image = null;
+            this.textBox2.CustomButton.Location = new System.Drawing.Point(329, 2);
+            this.textBox2.CustomButton.Name = "";
+            this.textBox2.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.textBox2.CustomButton.Style = JHUI.JColorStyle.White;
+            this.textBox2.CustomButton.TabIndex = 1;
+            this.textBox2.CustomButton.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox2.CustomButton.UseSelectable = true;
+            this.textBox2.CustomButton.Visible = false;
+            this.textBox2.DrawBorder = true;
+            this.textBox2.DrawBorderBottomLine = false;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox2.FontSize = JHUI.JTextBoxSize.Tall;
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
+            this.textBox2.Lines = new string[0];
+            this.textBox2.Location = new System.Drawing.Point(166, 171);
+            this.textBox2.MaxLength = 32767;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox2.SelectedText = "";
+            this.textBox2.SelectionLength = 0;
+            this.textBox2.SelectionStart = 0;
+            this.textBox2.ShortcutsEnabled = true;
+            this.textBox2.Size = new System.Drawing.Size(363, 36);
+            this.textBox2.Style = JHUI.JColorStyle.White;
+            this.textBox2.TabIndex = 2;
+            this.textBox2.TextWaterMark = "Password";
+            this.textBox2.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox2.UseCustomFont = false;
+            this.textBox2.UseSelectable = true;
+            this.textBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox2.Click += new System.EventHandler(this.TextBox2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderBottomLineSize = 5;
+            this.textBox1.BorderColor = System.Drawing.Color.Black;
+            this.textBox1.BottomLineOffset = new System.Drawing.Size(3, 3);
+            // 
+            // 
+            // 
+            this.textBox1.CustomButton.Image = null;
+            this.textBox1.CustomButton.Location = new System.Drawing.Point(329, 2);
+            this.textBox1.CustomButton.Name = "";
+            this.textBox1.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.textBox1.CustomButton.Style = JHUI.JColorStyle.White;
+            this.textBox1.CustomButton.TabIndex = 1;
+            this.textBox1.CustomButton.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox1.CustomButton.UseSelectable = true;
+            this.textBox1.CustomButton.Visible = false;
+            this.textBox1.DrawBorder = true;
+            this.textBox1.DrawBorderBottomLine = false;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.FontSize = JHUI.JTextBoxSize.Tall;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Lines = new string[0];
+            this.textBox1.Location = new System.Drawing.Point(166, 129);
+            this.textBox1.MaxLength = 32767;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '\0';
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox1.SelectedText = "";
+            this.textBox1.SelectionLength = 0;
+            this.textBox1.SelectionStart = 0;
+            this.textBox1.ShortcutsEnabled = true;
+            this.textBox1.Size = new System.Drawing.Size(363, 36);
+            this.textBox1.Style = JHUI.JColorStyle.White;
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextWaterMark = "Email";
+            this.textBox1.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox1.UseCustomFont = false;
+            this.textBox1.UseSelectable = true;
+            this.textBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(163)))), ((int)(((byte)(205)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(166, 213);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(363, 75);
+            this.button1.Style = JHUI.JColorStyle.White;
+            this.button1.TabIndex = 3;
+            this.button1.Text = "LOGIN";
+            this.button1.Theme = JHUI.JThemeStyle.Dark;
+            this.button1.UseSelectable = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.ButtonLogin_Click);
+            // 
+            // RegisterPage
+            // 
+            this.RegisterPage.Controls.Add(this.textBox5);
+            this.RegisterPage.Controls.Add(this.textBox3);
+            this.RegisterPage.Controls.Add(this.textBox4);
+            this.RegisterPage.Controls.Add(this.button2);
+            this.RegisterPage.Controls.Add(this.pictureBox2);
+            this.RegisterPage.HorizontalScrollbarBarColor = true;
+            this.RegisterPage.HorizontalScrollbarHighlightOnWheel = false;
+            this.RegisterPage.HorizontalScrollbarSize = 10;
+            this.RegisterPage.Location = new System.Drawing.Point(4, 38);
+            this.RegisterPage.Name = "RegisterPage";
+            this.RegisterPage.Size = new System.Drawing.Size(697, 364);
+            this.RegisterPage.Style = JHUI.JColorStyle.White;
+            this.RegisterPage.TabIndex = 1;
+            this.RegisterPage.Text = "Register";
+            this.RegisterPage.Theme = JHUI.JThemeStyle.Dark;
+            this.RegisterPage.UseVisualStyleBackColor = true;
+            this.RegisterPage.VerticalScrollbarBarColor = true;
+            this.RegisterPage.VerticalScrollbarHighlightOnWheel = false;
+            this.RegisterPage.VerticalScrollbarSize = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::SurfShark.Properties.Resources.splash;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(166, -5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(363, 366);
+            this.pictureBox2.Style = JHUI.JColorStyle.White;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Theme = JHUI.JThemeStyle.Dark;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderBottomLineSize = 5;
+            this.textBox5.BorderColor = System.Drawing.Color.Black;
+            this.textBox5.BottomLineOffset = new System.Drawing.Size(3, 3);
+            // 
+            // 
+            // 
+            this.textBox5.CustomButton.Image = null;
+            this.textBox5.CustomButton.Location = new System.Drawing.Point(329, 2);
+            this.textBox5.CustomButton.Name = "";
+            this.textBox5.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.textBox5.CustomButton.Style = JHUI.JColorStyle.White;
+            this.textBox5.CustomButton.TabIndex = 1;
+            this.textBox5.CustomButton.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox5.CustomButton.UseSelectable = true;
+            this.textBox5.CustomButton.Visible = false;
+            this.textBox5.DrawBorder = true;
+            this.textBox5.DrawBorderBottomLine = false;
+            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox5.FontSize = JHUI.JTextBoxSize.Tall;
+            this.textBox5.FontWeight = JHUI.JTextBoxWeight.Light;
+            this.textBox5.ForeColor = System.Drawing.Color.Black;
+            this.textBox5.Lines = new string[0];
+            this.textBox5.Location = new System.Drawing.Point(166, 213);
+            this.textBox5.MaxLength = 32767;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.PasswordChar = '*';
+            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox5.SelectedText = "";
+            this.textBox5.SelectionLength = 0;
+            this.textBox5.SelectionStart = 0;
+            this.textBox5.ShortcutsEnabled = true;
+            this.textBox5.Size = new System.Drawing.Size(363, 36);
+            this.textBox5.Style = JHUI.JColorStyle.White;
+            this.textBox5.TabIndex = 3;
+            this.textBox5.TextWaterMark = "Repeate Password";
+            this.textBox5.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox5.UseCustomFont = false;
+            this.textBox5.UseSelectable = true;
+            this.textBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderBottomLineSize = 5;
+            this.textBox3.BorderColor = System.Drawing.Color.Black;
+            this.textBox3.BottomLineOffset = new System.Drawing.Size(3, 3);
+            // 
+            // 
+            // 
+            this.textBox3.CustomButton.Image = null;
+            this.textBox3.CustomButton.Location = new System.Drawing.Point(329, 2);
+            this.textBox3.CustomButton.Name = "";
+            this.textBox3.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.textBox3.CustomButton.Style = JHUI.JColorStyle.White;
+            this.textBox3.CustomButton.TabIndex = 1;
+            this.textBox3.CustomButton.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox3.CustomButton.UseSelectable = true;
+            this.textBox3.CustomButton.Visible = false;
+            this.textBox3.DrawBorder = true;
+            this.textBox3.DrawBorderBottomLine = false;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox3.FontSize = JHUI.JTextBoxSize.Tall;
+            this.textBox3.FontWeight = JHUI.JTextBoxWeight.Light;
+            this.textBox3.ForeColor = System.Drawing.Color.Black;
+            this.textBox3.Lines = new string[0];
+            this.textBox3.Location = new System.Drawing.Point(166, 171);
+            this.textBox3.MaxLength = 32767;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox3.SelectedText = "";
+            this.textBox3.SelectionLength = 0;
+            this.textBox3.SelectionStart = 0;
+            this.textBox3.ShortcutsEnabled = true;
+            this.textBox3.Size = new System.Drawing.Size(363, 36);
+            this.textBox3.Style = JHUI.JColorStyle.White;
+            this.textBox3.TabIndex = 2;
+            this.textBox3.TextWaterMark = "Password";
+            this.textBox3.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox3.UseCustomFont = false;
+            this.textBox3.UseSelectable = true;
+            this.textBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderBottomLineSize = 5;
+            this.textBox4.BorderColor = System.Drawing.Color.Black;
+            this.textBox4.BottomLineOffset = new System.Drawing.Size(3, 3);
+            // 
+            // 
+            // 
+            this.textBox4.CustomButton.Image = null;
+            this.textBox4.CustomButton.Location = new System.Drawing.Point(329, 2);
+            this.textBox4.CustomButton.Name = "";
+            this.textBox4.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.textBox4.CustomButton.Style = JHUI.JColorStyle.White;
+            this.textBox4.CustomButton.TabIndex = 1;
+            this.textBox4.CustomButton.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox4.CustomButton.UseSelectable = true;
+            this.textBox4.CustomButton.Visible = false;
+            this.textBox4.DrawBorder = true;
+            this.textBox4.DrawBorderBottomLine = false;
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox4.FontSize = JHUI.JTextBoxSize.Tall;
+            this.textBox4.FontWeight = JHUI.JTextBoxWeight.Light;
+            this.textBox4.ForeColor = System.Drawing.Color.Black;
+            this.textBox4.Lines = new string[0];
+            this.textBox4.Location = new System.Drawing.Point(166, 129);
+            this.textBox4.MaxLength = 32767;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '\0';
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBox4.SelectedText = "";
+            this.textBox4.SelectionLength = 0;
+            this.textBox4.SelectionStart = 0;
+            this.textBox4.ShortcutsEnabled = true;
+            this.textBox4.Size = new System.Drawing.Size(363, 36);
+            this.textBox4.Style = JHUI.JColorStyle.White;
+            this.textBox4.TabIndex = 1;
+            this.textBox4.TextWaterMark = "Email";
+            this.textBox4.Theme = JHUI.JThemeStyle.Dark;
+            this.textBox4.UseCustomFont = false;
+            this.textBox4.UseSelectable = true;
+            this.textBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(185)))), ((int)(((byte)(78)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F);
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(166, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(363, 34);
+            this.button2.Style = JHUI.JColorStyle.White;
+            this.button2.TabIndex = 4;
+            this.button2.Text = "REGISTER";
+            this.button2.Theme = JHUI.JThemeStyle.Dark;
+            this.button2.UseSelectable = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.BTNRegister_Click);
             // 
             // notice
             // 
@@ -147,314 +445,21 @@
     "sists please contact us on site.";
             this.notice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.notice.TextWaterMark = "";
-            this.notice.Theme = JHUI.JThemeStyle.Light;
+            this.notice.Theme = JHUI.JThemeStyle.Dark;
             this.notice.UseCustomFont = false;
             this.notice.UseSelectable = true;
             this.notice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.notice.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = global::SurfShark.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(277, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 125);
-            this.pictureBox1.Style = JHUI.JColorStyle.White;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Theme = JHUI.JThemeStyle.Light;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderBottomLineSize = 5;
-            this.textBox2.BorderColor = System.Drawing.Color.Black;
-            this.textBox2.BottomLineOffset = new System.Drawing.Size(3, 3);
-            // 
-            // 
-            // 
-            this.textBox2.CustomButton.Image = null;
-            this.textBox2.CustomButton.Location = new System.Drawing.Point(329, 2);
-            this.textBox2.CustomButton.Name = "";
-            this.textBox2.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.textBox2.CustomButton.Style = JHUI.JColorStyle.White;
-            this.textBox2.CustomButton.TabIndex = 1;
-            this.textBox2.CustomButton.Theme = JHUI.JThemeStyle.Dark;
-            this.textBox2.CustomButton.UseSelectable = true;
-            this.textBox2.CustomButton.Visible = false;
-            this.textBox2.DrawBorder = true;
-            this.textBox2.DrawBorderBottomLine = false;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.FontSize = JHUI.JTextBoxSize.Tall;
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Lines = new string[0];
-            this.textBox2.Location = new System.Drawing.Point(166, 171);
-            this.textBox2.MaxLength = 32767;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox2.SelectedText = "";
-            this.textBox2.SelectionLength = 0;
-            this.textBox2.SelectionStart = 0;
-            this.textBox2.ShortcutsEnabled = true;
-            this.textBox2.Size = new System.Drawing.Size(363, 36);
-            this.textBox2.Style = JHUI.JColorStyle.White;
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextWaterMark = "Password";
-            this.textBox2.Theme = JHUI.JThemeStyle.Light;
-            this.textBox2.UseCustomFont = false;
-            this.textBox2.UseSelectable = true;
-            this.textBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.Click += new System.EventHandler(this.TextBox2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderBottomLineSize = 5;
-            this.textBox1.BorderColor = System.Drawing.Color.Black;
-            this.textBox1.BottomLineOffset = new System.Drawing.Size(3, 3);
-            // 
-            // 
-            // 
-            this.textBox1.CustomButton.Image = null;
-            this.textBox1.CustomButton.Location = new System.Drawing.Point(329, 2);
-            this.textBox1.CustomButton.Name = "";
-            this.textBox1.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.textBox1.CustomButton.Style = JHUI.JColorStyle.White;
-            this.textBox1.CustomButton.TabIndex = 1;
-            this.textBox1.CustomButton.Theme = JHUI.JThemeStyle.Dark;
-            this.textBox1.CustomButton.UseSelectable = true;
-            this.textBox1.CustomButton.Visible = false;
-            this.textBox1.DrawBorder = true;
-            this.textBox1.DrawBorderBottomLine = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.FontSize = JHUI.JTextBoxSize.Tall;
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Lines = new string[0];
-            this.textBox1.Location = new System.Drawing.Point(166, 129);
-            this.textBox1.MaxLength = 32767;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '\0';
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox1.SelectedText = "";
-            this.textBox1.SelectionLength = 0;
-            this.textBox1.SelectionStart = 0;
-            this.textBox1.ShortcutsEnabled = true;
-            this.textBox1.Size = new System.Drawing.Size(363, 36);
-            this.textBox1.Style = JHUI.JColorStyle.White;
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextWaterMark = "Email";
-            this.textBox1.Theme = JHUI.JThemeStyle.Light;
-            this.textBox1.UseCustomFont = false;
-            this.textBox1.UseSelectable = true;
-            this.textBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Click += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(163)))), ((int)(((byte)(205)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(166, 213);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(363, 72);
-            this.button1.Style = JHUI.JColorStyle.White;
-            this.button1.TabIndex = 3;
-            this.button1.Text = "LOGIN";
-            this.button1.Theme = JHUI.JThemeStyle.Light;
-            this.button1.UseSelectable = true;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.ButtonLogin_Click);
-            // 
-            // RegisterPage
-            // 
-            this.RegisterPage.Controls.Add(this.pictureBox2);
-            this.RegisterPage.Controls.Add(this.textBox5);
-            this.RegisterPage.Controls.Add(this.textBox3);
-            this.RegisterPage.Controls.Add(this.textBox4);
-            this.RegisterPage.Controls.Add(this.button2);
-            this.RegisterPage.HorizontalScrollbarBarColor = true;
-            this.RegisterPage.HorizontalScrollbarHighlightOnWheel = false;
-            this.RegisterPage.HorizontalScrollbarSize = 10;
-            this.RegisterPage.Location = new System.Drawing.Point(4, 38);
-            this.RegisterPage.Name = "RegisterPage";
-            this.RegisterPage.Size = new System.Drawing.Size(697, 397);
-            this.RegisterPage.Style = JHUI.JColorStyle.White;
-            this.RegisterPage.TabIndex = 1;
-            this.RegisterPage.Text = "Register";
-            this.RegisterPage.Theme = JHUI.JThemeStyle.Light;
-            this.RegisterPage.UseVisualStyleBackColor = true;
-            this.RegisterPage.VerticalScrollbarBarColor = true;
-            this.RegisterPage.VerticalScrollbarHighlightOnWheel = false;
-            this.RegisterPage.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = global::SurfShark.Properties.Resources.Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(277, -2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(138, 125);
-            this.pictureBox2.Style = JHUI.JColorStyle.White;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Theme = JHUI.JThemeStyle.Light;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderBottomLineSize = 5;
-            this.textBox5.BorderColor = System.Drawing.Color.Black;
-            this.textBox5.BottomLineOffset = new System.Drawing.Size(3, 3);
-            // 
-            // 
-            // 
-            this.textBox5.CustomButton.Image = null;
-            this.textBox5.CustomButton.Location = new System.Drawing.Point(329, 2);
-            this.textBox5.CustomButton.Name = "";
-            this.textBox5.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.textBox5.CustomButton.Style = JHUI.JColorStyle.White;
-            this.textBox5.CustomButton.TabIndex = 1;
-            this.textBox5.CustomButton.Theme = JHUI.JThemeStyle.Dark;
-            this.textBox5.CustomButton.UseSelectable = true;
-            this.textBox5.CustomButton.Visible = false;
-            this.textBox5.DrawBorder = true;
-            this.textBox5.DrawBorderBottomLine = false;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox5.FontSize = JHUI.JTextBoxSize.Tall;
-            this.textBox5.FontWeight = JHUI.JTextBoxWeight.Light;
-            this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Lines = new string[0];
-            this.textBox5.Location = new System.Drawing.Point(166, 213);
-            this.textBox5.MaxLength = 32767;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox5.SelectedText = "";
-            this.textBox5.SelectionLength = 0;
-            this.textBox5.SelectionStart = 0;
-            this.textBox5.ShortcutsEnabled = true;
-            this.textBox5.Size = new System.Drawing.Size(363, 36);
-            this.textBox5.Style = JHUI.JColorStyle.White;
-            this.textBox5.TabIndex = 3;
-            this.textBox5.TextWaterMark = "Repeate Password";
-            this.textBox5.Theme = JHUI.JThemeStyle.Light;
-            this.textBox5.UseCustomFont = false;
-            this.textBox5.UseSelectable = true;
-            this.textBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderBottomLineSize = 5;
-            this.textBox3.BorderColor = System.Drawing.Color.Black;
-            this.textBox3.BottomLineOffset = new System.Drawing.Size(3, 3);
-            // 
-            // 
-            // 
-            this.textBox3.CustomButton.Image = null;
-            this.textBox3.CustomButton.Location = new System.Drawing.Point(329, 2);
-            this.textBox3.CustomButton.Name = "";
-            this.textBox3.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.textBox3.CustomButton.Style = JHUI.JColorStyle.White;
-            this.textBox3.CustomButton.TabIndex = 1;
-            this.textBox3.CustomButton.Theme = JHUI.JThemeStyle.Dark;
-            this.textBox3.CustomButton.UseSelectable = true;
-            this.textBox3.CustomButton.Visible = false;
-            this.textBox3.DrawBorder = true;
-            this.textBox3.DrawBorderBottomLine = false;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox3.FontSize = JHUI.JTextBoxSize.Tall;
-            this.textBox3.FontWeight = JHUI.JTextBoxWeight.Light;
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Lines = new string[0];
-            this.textBox3.Location = new System.Drawing.Point(166, 171);
-            this.textBox3.MaxLength = 32767;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox3.SelectedText = "";
-            this.textBox3.SelectionLength = 0;
-            this.textBox3.SelectionStart = 0;
-            this.textBox3.ShortcutsEnabled = true;
-            this.textBox3.Size = new System.Drawing.Size(363, 36);
-            this.textBox3.Style = JHUI.JColorStyle.White;
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextWaterMark = "Password";
-            this.textBox3.Theme = JHUI.JThemeStyle.Light;
-            this.textBox3.UseCustomFont = false;
-            this.textBox3.UseSelectable = true;
-            this.textBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderBottomLineSize = 5;
-            this.textBox4.BorderColor = System.Drawing.Color.Black;
-            this.textBox4.BottomLineOffset = new System.Drawing.Size(3, 3);
-            // 
-            // 
-            // 
-            this.textBox4.CustomButton.Image = null;
-            this.textBox4.CustomButton.Location = new System.Drawing.Point(329, 2);
-            this.textBox4.CustomButton.Name = "";
-            this.textBox4.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.textBox4.CustomButton.Style = JHUI.JColorStyle.White;
-            this.textBox4.CustomButton.TabIndex = 1;
-            this.textBox4.CustomButton.Theme = JHUI.JThemeStyle.Dark;
-            this.textBox4.CustomButton.UseSelectable = true;
-            this.textBox4.CustomButton.Visible = false;
-            this.textBox4.DrawBorder = true;
-            this.textBox4.DrawBorderBottomLine = false;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox4.FontSize = JHUI.JTextBoxSize.Tall;
-            this.textBox4.FontWeight = JHUI.JTextBoxWeight.Light;
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Lines = new string[0];
-            this.textBox4.Location = new System.Drawing.Point(166, 129);
-            this.textBox4.MaxLength = 32767;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '\0';
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox4.SelectedText = "";
-            this.textBox4.SelectionLength = 0;
-            this.textBox4.SelectionStart = 0;
-            this.textBox4.ShortcutsEnabled = true;
-            this.textBox4.Size = new System.Drawing.Size(363, 36);
-            this.textBox4.Style = JHUI.JColorStyle.White;
-            this.textBox4.TabIndex = 1;
-            this.textBox4.TextWaterMark = "Email";
-            this.textBox4.Theme = JHUI.JThemeStyle.Light;
-            this.textBox4.UseCustomFont = false;
-            this.textBox4.UseSelectable = true;
-            this.textBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(185)))), ((int)(((byte)(78)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F);
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(166, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(363, 34);
-            this.button2.Style = JHUI.JColorStyle.White;
-            this.button2.TabIndex = 4;
-            this.button2.Text = "REGISTER";
-            this.button2.Theme = JHUI.JThemeStyle.Light;
-            this.button2.UseSelectable = true;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.BTNRegister_Click);
-            // 
             // LoginDialog
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(718, 512);
             this.Controls.Add(this.RegisterTabPage);
             this.Controls.Add(this.notice);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.JControlBoxButonSize = new System.Drawing.Size(19, 19);
+            this.JControlBoxType = JHUI.Forms.JControlBoxType.CUSTOMIZABLE;
             this.Location = new System.Drawing.Point(718, 512);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(718, 512);
@@ -462,10 +467,10 @@
             this.MinimumSize = new System.Drawing.Size(718, 512);
             this.Name = "LoginDialog";
             this.Resizable = false;
-            this.Text = "Please Login/Register";
-            this.Theme = JHUI.JThemeStyle.Light;
+            this.Text = "Welcome back";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginDialog_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginDialog_KeyDown);
             this.RegisterTabPage.ResumeLayout(false);
             this.loginPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

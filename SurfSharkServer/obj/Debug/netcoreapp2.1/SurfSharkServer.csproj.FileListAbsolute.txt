@@ -1,0 +1,14 @@
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\Configs\Config.ini
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\Configs\HibernateConfig.xml
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\Configs\Net4Log.xml
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\SurfSharkServer.deps.json
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\SurfSharkServer.runtimeconfig.json
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\SurfSharkServer.runtimeconfig.dev.json
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\SurfSharkServer.dll
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\bin\Debug\netcoreapp2.1\SurfSharkServer.pdb
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\obj\Debug\netcoreapp2.1\SurfSharkServer.csproj.CoreCompileInputs.cache
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\obj\Debug\netcoreapp2.1\SurfSharkServer.AssemblyInfoInputs.cache
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\obj\Debug\netcoreapp2.1\SurfSharkServer.AssemblyInfo.cs
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\obj\Debug\netcoreapp2.1\SurfSharkServer.dll
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\obj\Debug\netcoreapp2.1\SurfSharkServer.pdb
+C:\Users\IcyTeck\source\repos\SurfShark\SurfSharkServer\obj\Debug\netcoreapp2.1\SurfSharkServer.csprojAssemblyReference.cache

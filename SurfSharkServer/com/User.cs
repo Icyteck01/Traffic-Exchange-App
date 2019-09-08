@@ -6,6 +6,12 @@ namespace SurfSharkServer.com
     {
         public uint UID = 0;
         public UserAccounts _data;
+
+        public User(UserAccounts account)
+        {
+            this._data = account;
+        }
+
         public string UserName { get => _data.userName; set => _data.userName = value; }
         public string Password { get => _data.passWord; set => _data.passWord = value; }
         public string Hwid { get => _data.hwid; set => _data.hwid = value; }
