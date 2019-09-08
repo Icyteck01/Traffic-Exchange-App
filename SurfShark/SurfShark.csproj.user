@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <PublishUrlHistory>publish\|http://www.surfing.games-shark.com/|http://www.surfing.games-shark.com/Download/</PublishUrlHistory>
+    <InstallUrlHistory>http://www.surfing.games-shark.com/Download/</InstallUrlHistory>
+    <SupportUrlHistory>http://www.surfing.games-shark.com/Support</SupportUrlHistory>
+    <UpdateUrlHistory>http://www.surfing.games-shark.com/Download/|http://www.surfing.games-shark.com/Update/</UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ErrorReportUrlHistory>http://www.surfing.games-shark.com/Error</ErrorReportUrlHistory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>
+    </ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>
