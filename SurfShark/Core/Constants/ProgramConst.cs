@@ -24,5 +24,8 @@ namespace SurfShark.Core.Constants
         public const string DO_LOGIN = "DO_LOGIN";
         public const string DO_REGISTER = "DO_REGISTER";
 
+
+        public const string DO_EXIT_PROGRAM = "DO_EXIT_PROGRAM";
+
     }
 }

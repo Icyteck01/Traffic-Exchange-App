@@ -229,9 +229,9 @@
             this.RegisterPage.HorizontalScrollbarBarColor = true;
             this.RegisterPage.HorizontalScrollbarHighlightOnWheel = false;
             this.RegisterPage.HorizontalScrollbarSize = 10;
-            this.RegisterPage.Location = new System.Drawing.Point(4, 38);
+            this.RegisterPage.Location = new System.Drawing.Point(4, 36);
             this.RegisterPage.Name = "RegisterPage";
-            this.RegisterPage.Size = new System.Drawing.Size(697, 364);
+            this.RegisterPage.Size = new System.Drawing.Size(192, 60);
             this.RegisterPage.Style = JHUI.JColorStyle.White;
             this.RegisterPage.TabIndex = 1;
             this.RegisterPage.Text = "Register";
@@ -468,6 +468,7 @@
             this.PaintTopBorder = false;
             this.Resizable = false;
             this.Text = "Welcome back";
+            this.TopMost = true;
             this.UseCustomBackColor = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginDialog_FormClosed);

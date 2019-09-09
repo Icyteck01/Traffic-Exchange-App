@@ -1,6 +1,5 @@
 ﻿using JHSEngine.Interfaces;
 using JHSEngine.Patterns.Observer;
-using JHUI.Forms;
 
 namespace JHSEngine.Patterns.Mediator
 {

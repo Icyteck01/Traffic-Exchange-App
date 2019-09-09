@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace SurfShark
 {
     partial class MainProgram
     {
@@ -549,7 +549,6 @@
             this.Resizable = false;
             this.Text = "Surfing Shark - Surf";
             this.Theme = JHUI.JThemeStyle.Light;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

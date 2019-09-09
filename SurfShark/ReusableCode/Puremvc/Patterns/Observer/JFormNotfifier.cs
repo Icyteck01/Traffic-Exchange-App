@@ -21,7 +21,7 @@ namespace JHSEngine.Patterns.Observer
         {
             get
             {
-                return JHSEngine.Patterns.Facade.Facade.GetInstance(multitonKey);
+                return Facade.Facade.GetInstance(multitonKey);
             }
         }
     }
