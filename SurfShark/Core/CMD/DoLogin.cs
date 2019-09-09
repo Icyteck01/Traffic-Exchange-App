@@ -21,8 +21,8 @@ namespace SurfShark.Core.CMD
             {
                 string username = data[0];
                 string password = data[1];
-                MainCache.UserName = username;
-                MainCache.PassWord = password;
+                LoginDialog.Username = username;
+                LoginDialog.Password = password;
                 string error;
                 if (!PasswordUtils.ValidLogin(username))
                 {

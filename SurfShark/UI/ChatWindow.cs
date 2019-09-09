@@ -2,8 +2,6 @@
 using JHUI.Forms;
 using Newtonsoft.Json;
 using SurfShark.Communication.Packets;
-using SurfShark.Core;
-using SurfShark.Core.Constants;
 using SurfShark.program;
 using SurfShark.programs;
 using System;
@@ -22,7 +20,7 @@ namespace SurfShark
         private string lastMSg = "";
         internal void LoadAll()
         {
-            checkBox1.Checked = MainCache.chatEnabled;
+            checkBox1.Checked = CoreSystem.chatEnabled;
             ProgramVars.chatList.Reverse();
             chatTextBox.Text = "";
             var sb = new StringBuilder();
@@ -57,7 +55,8 @@ namespace SurfShark
 
         private void OnBtnDownSend(object sender, EventArgs e)
         {
-
+            if (CoreSystem.canSendChat)
+            {
                 string msg = textBox2.Text;
                 string msgx = Regex.Replace(msg, @"\s+", "");
                 string xczxc = @"[^a-zA-Z0-9 :;,_!\?@()#$%\^&\*-+= < > ]";
@@ -89,19 +88,24 @@ namespace SurfShark
                         Message = textBox2.Text
                     };
                     NetworkManager.Send(NetworkConstants.CHAT, cr);
+                    CoreSystem.canSendChat = false;
                     textBox2.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("Please write somthing!");
                 }
-            
+            }
         }
 
         private void ChatWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MainComponent.Core.SendNotification(ProgramConst.EVENT_RESIZE);      
+            if (CoreSystem.startedToSurf)
+            {
+                CoreSystem.Resize_window();
+            }
             this.Hide();
+            CoreSystem.chatLoaded = false;
         }
 
         private void TextBox2_KeyDown(object sender, KeyPressEventArgs e)
@@ -114,7 +118,7 @@ namespace SurfShark
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            MainCache.chatEnabled = checkBox1.Checked;
+            CoreSystem.chatEnabled = checkBox1.Checked;
         }
     }
 }

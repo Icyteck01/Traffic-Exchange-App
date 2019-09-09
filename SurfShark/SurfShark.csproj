@@ -153,9 +153,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JHUI, Version=5.1.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\JHUI\bin\Release\JHUI.dll</HintPath>
+    <Reference Include="JHUI">
+      <HintPath>..\..\JHUI\bin\Release\Production\JHUI.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>includes\Newtonsoft.Json.dll</HintPath>
@@ -177,9 +176,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\MainComponent.Designer.cs">
-      <DependentUpon>MainComponent.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\ChatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,9 +220,7 @@
     <Compile Include="ReusableCode\JHSNetProtocol\Protocol\HandShakeMsg.cs" />
     <Compile Include="ReusableCode\JHSNetProtocol\Utils\JHSDebug.cs" />
     <Compile Include="ReusableCode\JHSNetProtocol\Utils\JHSTime.cs" />
-    <Compile Include="Core\MainComponent.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Core\MainComponent.cs" />
     <Compile Include="UI\Preview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +265,7 @@
     </Compile>
     <Compile Include="Network\Packets\DefaultResponse.cs" />
     <Compile Include="Share\Encrypt.cs" />
+    <Compile Include="Core\Forms.cs" />
     <Compile Include="UI\LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,9 +281,6 @@
     <Compile Include="Share\ProgramVars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\img\GrooveShark2.png" />
-    <EmbeddedResource Include="Core\MainComponent.resx">
-      <DependentUpon>MainComponent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\ChatWindow.resx">
       <DependentUpon>ChatWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,7 +388,6 @@
     <None Include="Resources\img\user-default-avatar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\MainCache.cs" />
     <Content Include="INFO.txt" />
     <Content Include="Resources\img\GrooveShark.ico" />
     <None Include="Resources\img\JHS LARGE.png" />

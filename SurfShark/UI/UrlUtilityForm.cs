@@ -2,8 +2,6 @@
 using JHUI.Forms;
 using Newtonsoft.Json;
 using SurfShark.Communication.Packets;
-using SurfShark.Core;
-using SurfShark.Core.Constants;
 using SurfShark.program;
 using System;
 using System.IO;
@@ -183,7 +181,7 @@ namespace SurfShark
                 if (total_items < canHave)
                 {
                     SiteClass site = new SiteClass();
-                   // site.uid = CoreSystem.userID;
+                    site.uid = CoreSystem.userID;
                     site.name = "New Site";
                     site.url = "http://www.exemple.com/";
                     site.refurl = "0";
@@ -281,8 +279,8 @@ namespace SurfShark
                 }
             }
 
-            MainComponent.Core.SendNotification(ProgramConst.EVENT_RESIZE);
-           // CoreSystem.isUtilOpen = false;
+            CoreSystem.Resize_window();
+            CoreSystem.isUtilOpen = false;
             this.Hide();
         }
 

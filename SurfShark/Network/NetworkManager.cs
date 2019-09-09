@@ -106,7 +106,6 @@ public class NetworkManager
             switch(packet.Code)
             {
                 case ErrorCodes.SUCCESS:
-                    MainCache.LoggedIn = true;
                     MainComponent.Core.SendNotification(ProgramConst.SHOW_MAIN, packet);
                     break;
                 case ErrorCodes.WRONG_PASSWORD:
