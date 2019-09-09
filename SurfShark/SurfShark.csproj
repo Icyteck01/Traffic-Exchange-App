@@ -53,7 +53,7 @@
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <Win32Resource>
     </Win32Resource>
-    <ApplicationIcon>img\GrooveShark2.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\img\GrooveShark2.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -137,7 +137,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SurfShark.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>true</DelaySign>
@@ -175,111 +176,123 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatWindow.cs">
+    <Compile Include="UI\ChatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatWindow.Designer.cs">
+    <Compile Include="UI\ChatWindow.Designer.cs">
       <DependentUpon>ChatWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Communication\Constants\ErrorCodes.cs" />
-    <Compile Include="Communication\NetworkManager.cs" />
-    <Compile Include="Communication\Packets\Login.cs" />
-    <Compile Include="Communication\Packets\Register.cs" />
-    <Compile Include="Communication\Packets\RemoveSite.cs" />
+    <Compile Include="Network\Enums\ErrorCodes.cs" />
+    <Compile Include="Network\Enums\CountryList.cs" />
+    <Compile Include="Network\Enums\UserType.cs" />
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="Network\Packets\Data\SiteClass.cs" />
+    <Compile Include="Network\Packets\Login.cs" />
+    <Compile Include="Network\Packets\LoginResponse.cs" />
+    <Compile Include="Network\Packets\Register.cs" />
+    <Compile Include="Network\Packets\RemoveSite.cs" />
+    <Compile Include="ReusableCode\Utils\PasswordUtils.cs" />
+    <Compile Include="Core\CMD\DoRegister.cs" />
+    <Compile Include="Core\CMD\DoLogin.cs" />
     <Compile Include="Core\Constants\ProgramConst.cs" />
     <Compile Include="Core\Enums\ProgramState.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSClient.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSConnection.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSDotNetCompatibility.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSNetworkClient.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSNetworkMessageHandlers.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSNetworkServer.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSServer.cs" />
-    <Compile Include="JHSNetProtocol\Core\JHSStatisiticsManager.cs" />
-    <Compile Include="JHSNetProtocol\Core\NetConfig.cs" />
-    <Compile Include="JHSNetProtocol\Crypto\EncDec.cs" />
-    <Compile Include="JHSNetProtocol\Enums\InternalMessages.cs" />
-    <Compile Include="JHSNetProtocol\Enums\PerStage.cs" />
-    <Compile Include="JHSNetProtocol\Interfaces\IJHSInterface.cs" />
-    <Compile Include="JHSNetProtocol\Interfaces\IJHSNetworkTransport.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSMessageBase.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSNetBuffer.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSNetworkMessage.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSNetworkReader.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSNetworkWriter.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSPacketFarmer.cs" />
-    <Compile Include="JHSNetProtocol\IO\JHSPool.cs" />
-    <Compile Include="JHSNetProtocol\Protocol\HandShakeMsg.cs" />
-    <Compile Include="JHSNetProtocol\Utils\JHSDebug.cs" />
-    <Compile Include="JHSNetProtocol\Utils\JHSTime.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSClient.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSConnection.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSDotNetCompatibility.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSNetworkClient.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSNetworkMessageHandlers.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSNetworkServer.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSServer.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\JHSStatisiticsManager.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Core\NetConfig.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Crypto\EncDec.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Enums\InternalMessages.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Enums\PerStage.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Interfaces\IJHSInterface.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Interfaces\IJHSNetworkTransport.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSMessageBase.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSNetBuffer.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSNetworkMessage.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSNetworkReader.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSNetworkWriter.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSPacketFarmer.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\IO\JHSPool.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Protocol\HandShakeMsg.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Utils\JHSDebug.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Utils\JHSTime.cs" />
     <Compile Include="Core\MainComponent.cs" />
-    <Compile Include="Preview.cs">
+    <Compile Include="UI\Preview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preview.Designer.cs">
+    <Compile Include="UI\Preview.Designer.cs">
       <DependentUpon>Preview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Puremvc\Core\Controller.cs" />
-    <Compile Include="Puremvc\Core\Model.cs" />
-    <Compile Include="Puremvc\Core\View.cs" />
-    <Compile Include="Puremvc\Interfaces\ICommand.cs" />
-    <Compile Include="Puremvc\Interfaces\IController.cs" />
-    <Compile Include="Puremvc\Interfaces\IFacade.cs" />
-    <Compile Include="Puremvc\Interfaces\IMediator.cs" />
-    <Compile Include="Puremvc\Interfaces\IModel.cs" />
-    <Compile Include="Puremvc\Interfaces\INotification.cs" />
-    <Compile Include="Puremvc\Interfaces\INotifier.cs" />
-    <Compile Include="Puremvc\Interfaces\IObserver.cs" />
-    <Compile Include="Puremvc\Interfaces\IProxy.cs" />
-    <Compile Include="Puremvc\Interfaces\IView.cs" />
-    <Compile Include="Puremvc\Patterns\Command\MacroCommand.cs" />
-    <Compile Include="Puremvc\Patterns\Command\SimpleCommand.cs" />
-    <Compile Include="Puremvc\Patterns\Facade\Facade.cs" />
-    <Compile Include="Puremvc\Patterns\Mediator\Mediator.cs" />
-    <Compile Include="Puremvc\Patterns\Observer\Notification.cs" />
-    <Compile Include="Puremvc\Patterns\Observer\Notifier.cs" />
-    <Compile Include="Puremvc\Patterns\Observer\Observer.cs" />
-    <Compile Include="Puremvc\Patterns\Proxy\Proxy.cs" />
-    <Compile Include="Share\baseSocket.cs" />
-    <Compile Include="Communication\Packets\ChatResponse.cs" />
-    <Compile Include="Communication\Constants\NetworkCommands.cs" />
-    <Compile Include="CoreSystem.cs">
+    <Compile Include="ReusableCode\Puremvc\Core\Controller.cs" />
+    <Compile Include="ReusableCode\Puremvc\Core\Model.cs" />
+    <Compile Include="ReusableCode\Puremvc\Core\View.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\ICommand.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IController.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IFacade.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IMediator.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IModel.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\INotification.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\INotifier.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IObserver.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IProxy.cs" />
+    <Compile Include="ReusableCode\Puremvc\Interfaces\IView.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Command\MacroCommand.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Command\SimpleCommand.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Facade\Facade.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Mediator\JMediator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoreSystem.designer.cs">
+    <Compile Include="ReusableCode\Puremvc\Patterns\Mediator\Mediator.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Observer\JFormNotfifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Notification.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Notifier.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Observer.cs" />
+    <Compile Include="ReusableCode\Puremvc\Patterns\Proxy\Proxy.cs" />
+    <Compile Include="Share\baseSocket.cs" />
+    <Compile Include="Network\Packets\ChatResponse.cs" />
+    <Compile Include="Network\Constants\NetworkCommands.cs" />
+    <Compile Include="UI\CoreSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CoreSystem.designer.cs">
       <DependentUpon>CoreSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Communication\Packets\DefaultResponse.cs" />
+    <Compile Include="Network\Packets\DefaultResponse.cs" />
     <Compile Include="Share\Encrypt.cs" />
     <Compile Include="Core\Forms.cs" />
-    <Compile Include="LoginDialog.cs">
+    <Compile Include="UI\LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginDialog.Designer.cs">
+    <Compile Include="UI\LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Share\FPkey.cs" />
     <Compile Include="Share\Hostip.cs" />
     <Compile Include="Share\LoginInfo.cs" />
-    <Compile Include="Communication\Constants\TransitOperation.cs" />
+    <Compile Include="Network\Constants\TransitOperation.cs" />
     <Compile Include="Share\PacketClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Share\ProgramVars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="app.config" />
-    <None Include="Resources\GrooveShark2.png" />
-    <EmbeddedResource Include="ChatWindow.resx">
+    <None Include="Resources\img\GrooveShark2.png" />
+    <EmbeddedResource Include="UI\ChatWindow.resx">
       <DependentUpon>ChatWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CoreSystem.resx">
+    <EmbeddedResource Include="UI\CoreSystem.resx">
       <DependentUpon>CoreSystem.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginDialog.resx">
+    <EmbeddedResource Include="UI\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preview.resx">
+    <EmbeddedResource Include="UI\Preview.resx">
       <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -287,11 +300,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SurfShark.resx">
+    <EmbeddedResource Include="UI\SurfShark.resx">
       <DependentUpon>SurfShark.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UrlUtilityForm.resx">
+    <EmbeddedResource Include="UI\UrlUtilityForm.resx">
       <DependentUpon>UrlUtilityForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -300,7 +313,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="img\1162467.0dcfbc3bc8dfd129adc15c3f2b4c2ac6.gif" />
+    <None Include="Resources\img\1162467.0dcfbc3bc8dfd129adc15c3f2b4c2ac6.gif" />
     <None Include="Properties\app.manifest">
       <SubType>Designer</SubType>
     </None>
@@ -314,19 +327,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Share\SiteClass.cs" />
-    <Compile Include="SurfShark.cs">
+    <Compile Include="UI\SurfShark.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SurfShark.designer.cs">
+    <Compile Include="UI\SurfShark.designer.cs">
       <DependentUpon>SurfShark.cs</DependentUpon>
     </Compile>
-    <Compile Include="UrlUtilityForm.cs">
+    <Compile Include="UI\UrlUtilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UrlUtilityForm.Designer.cs">
+    <Compile Include="UI\UrlUtilityForm.Designer.cs">
       <DependentUpon>UrlUtilityForm.cs</DependentUpon>
     </Compile>
-    <None Include="SurfShark.pfx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -361,24 +373,25 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\default-1.png" />
+    <None Include="Resources\img\default-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\gen_question_b_20.png" />
+    <None Include="Resources\img\gen_question_b_20.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\QuestionMark.png" />
+    <None Include="Resources\img\QuestionMark.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\Untitled-2.png" />
+    <None Include="Resources\img\Untitled-2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\user-default-avatar.jpg" />
+    <None Include="Resources\img\user-default-avatar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="img\GrooveShark.ico" />
-    <None Include="img\JHS LARGE.png" />
-    <None Include="img\splash.png" />
+    <Content Include="INFO.txt" />
+    <Content Include="Resources\img\GrooveShark.ico" />
+    <None Include="Resources\img\JHS LARGE.png" />
+    <None Include="Resources\img\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="CefSharp">

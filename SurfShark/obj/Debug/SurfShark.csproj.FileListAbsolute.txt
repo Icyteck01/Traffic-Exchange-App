@@ -1,9 +1,3 @@
-C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\CS.exe.config
-C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\CS.exe
-C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\CS.pdb
-C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\JHUI.dll
-C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\Newtonsoft.Json.dll
-C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.csprojAssemblyReference.cache
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.ChatWindow.resources
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.CoreSystem.resources
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.LoginDialog.resources
@@ -13,6 +7,11 @@ C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\WindowsFormsApplicat
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.UrlUtilityForm.resources
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.csproj.GenerateResource.cache
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.csproj.CoreCompileInputs.cache
+C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\CS.exe
+C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\CS.pdb
+C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\JHUI.dll
+C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\bin\Debug\Newtonsoft.Json.dll
+C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.csprojAssemblyReference.cache
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\SurfShark.csproj.CopyComplete
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\CS.exe
 C:\Users\IcyTeck\source\repos\SurfShark\SurfShark\obj\Debug\CS.pdb

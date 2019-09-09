@@ -81,8 +81,11 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                Program.Notifier.Visible = false;
-                Program.Notifier.Dispose();
+                if (Program.Notifier != null)
+                {
+                    Program.Notifier.Visible = false;
+                    Program.Notifier.Dispose();
+                }
             }
             catch (Exception) { }
 

@@ -1,6 +1,7 @@
 ﻿using JHSEngine.Interfaces;
 using JHSEngine.Patterns.Facade;
 using JHSEngine.Patterns.Mediator;
+using SurfShark.Core.CMD;
 using SurfShark.Core.Constants;
 using System;
 using System.Collections.Generic;
@@ -69,7 +70,10 @@ namespace SurfShark.Core
             surf = new MainProgram();
             util = new UrlUtilityForm();
             chat = new ChatWindow();
-            MainComponent.Core.SendNotification(SHOW_LOGIN);
+            Core.RegisterCommand(DO_LOGIN, new DoLogin());
+            Core.RegisterCommand(DO_REGISTER, new DoRegister());
+            Core.RegisterMediator(login);
+            Core.SendNotification(SHOW_LOGIN);
             NetworkManager.Start();
         }
 

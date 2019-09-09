@@ -6,9 +6,8 @@
     <property name="userName" column="userName" type="String"></property>
     <property name="passWord" column="passWord" type="String"></property>
     <property name="hwid" column="hwid" type="String"></property>
-    <property name="type" column="type" type="UInt32"></property>
-    <property name="time" column="time" type="UInt32"></property>
-    <property name="region" column="region" type="String"></property>
+    <property name="MemberType" column="MemberType" type="Byte"></property>
+    <property name="credits" column="credits" type="UInt32"></property>
     <property name="ip" column="ip" type="String"></property>
     <property name="lastKnownIp" column="lastKnownIp" type="String"></property>
     <property name="createTime" column="createTime" type="DateTime"></property>

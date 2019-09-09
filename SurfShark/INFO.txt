@@ -1,0 +1,5 @@
+﻿Core - PURE MVC
+Network - Network stuff
+Resources - Images
+UI - Visual Components
+ReusableCode = librarys I made over time.
