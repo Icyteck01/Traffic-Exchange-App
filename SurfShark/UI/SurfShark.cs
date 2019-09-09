@@ -1,6 +1,8 @@
 ﻿using JHSEngine.Patterns.Mediator;
 using JHUI.Forms;
 using SurfShark;
+using SurfShark.Core;
+using SurfShark.Core.Constants;
 using SurfShark.program;
 using System;
 using System.ComponentModel;
@@ -9,7 +11,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace SurfShark
 {
     public partial class MainProgram : JMediator
     {
@@ -25,7 +27,6 @@ namespace WindowsFormsApplication1
 
         public MainProgram()
         {
-            LoginDialog.CheckForIllegalCrossThreadCalls = false;
             CoreSystemInstance = this;
             this.Timer1 = new Timer();
             this.Timer1.Tick += new EventHandler(this.Timer1_Tick);
@@ -127,15 +128,14 @@ namespace WindowsFormsApplication1
 
         private void startTick()
         {
-            if (CoreSystem.startedToSurf)
-            {
+    
                 this.Timer1.Enabled = true;
                 this.Timer1.Interval = 1000; // 1 second
                 this.Timer1.Start();
                 MainProgram.loaded = false;
                 MainProgram.tempCounter = 10;
                 ChangePergentage();
-            }
+            
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -152,10 +152,9 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    if (!CoreSystem.startedToSurf)
-                    {
+
                         this.Timer1.Stop();
-                    }
+                    
                 }
             }
             else
@@ -173,25 +172,6 @@ namespace WindowsFormsApplication1
                 progressBar2.Value = raza * MainProgram.counter;
             }
             catch (Exception) { }
-        }
-        protected void OnFormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (CoreSystem.startedToSurf)
-            {
-                if (CloseCancel() == true)
-                {
-                    CoreSystem.Resize_window();
-                    CoreSystem.startedToSurf = false;
-                    e.Cancel = true;
-                    this.Hide();
-                }
-                else
-                {
-                    e.Cancel = true;
-
-                }
-            }
-
         }
 
         public static bool CloseCancel()

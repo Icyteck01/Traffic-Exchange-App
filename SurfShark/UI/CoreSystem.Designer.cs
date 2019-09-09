@@ -132,7 +132,6 @@
             this.button1.Theme = JHUI.JThemeStyle.Light;
             this.button1.UseSelectable = true;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // MemberTypExd
             // 
@@ -335,6 +334,7 @@
             // 
             this.jLabel1.DropShadowColor = System.Drawing.Color.Cyan;
             this.jLabel1.DropShadowOffset = new System.Drawing.Size(1, 1);
+            this.jLabel1.Enabled = false;
             this.jLabel1.FontSize = JHUI.JLabelSize.Tall;
             this.jLabel1.Location = new System.Drawing.Point(10, 6);
             this.jLabel1.Name = "jLabel1";
@@ -378,7 +378,6 @@
             this.Resizable = false;
             this.Text = "Surfing Shark - Core System";
             this.Theme = JHUI.JThemeStyle.Light;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

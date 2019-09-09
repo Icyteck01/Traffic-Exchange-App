@@ -1,10 +1,9 @@
-C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Surfing Shark.pdb
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\bin\Debug\GrooveShark.ico
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\bin\Debug\Surfing Shark.exe
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\bin\Debug\Surfing Shark.pdb
-C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.csprojAssemblyReference.cache
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.Launcher.resources
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.Properties.Resources.resources
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.csproj.GenerateResource.cache
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.csproj.CoreCompileInputs.cache
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Surfing Shark.exe
+C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Surfing Shark.pdb
