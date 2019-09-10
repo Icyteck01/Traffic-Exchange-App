@@ -181,6 +181,7 @@
     <Compile Include="Core\MainComponent.Designer.cs">
       <DependentUpon>MainComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Network\Enums\ReferralType.cs" />
     <Compile Include="UI\ChatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,7 +262,6 @@
     <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Notifier.cs" />
     <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Observer.cs" />
     <Compile Include="ReusableCode\Puremvc\Patterns\Proxy\Proxy.cs" />
-    <Compile Include="Share\baseSocket.cs" />
     <Compile Include="Network\Packets\ChatResponse.cs" />
     <Compile Include="Network\Constants\NetworkCommands.cs" />
     <Compile Include="UI\CoreSystem.cs">
@@ -271,20 +271,14 @@
       <DependentUpon>CoreSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Network\Packets\DefaultResponse.cs" />
-    <Compile Include="Share\Encrypt.cs" />
     <Compile Include="UI\LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Share\FPkey.cs" />
-    <Compile Include="Share\Hostip.cs" />
-    <Compile Include="Share\LoginInfo.cs" />
     <Compile Include="Network\Constants\TransitOperation.cs" />
-    <Compile Include="Share\PacketClient.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Share\ProgramVars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\img\GrooveShark2.png" />
     <EmbeddedResource Include="Core\MainComponent.resx">
@@ -335,7 +329,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Share\SiteClass.cs" />
     <Compile Include="UI\SurfShark.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,5 +1,7 @@
-﻿using JHSEngine.Patterns.Mediator;
+﻿using JHSEngine.Interfaces;
+using JHSEngine.Patterns.Mediator;
 using SurfShark.Core;
+using SurfSharkServer.Communication.Packets;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -71,7 +73,7 @@ namespace SurfShark
 
         private void Myurls_Click(object sender, EventArgs e)
         {
-
+            new UrlUtilityForm().ShowDialog(this);
         }
 
         private void Buymins_Click(object sender, EventArgs e)
@@ -87,6 +89,31 @@ namespace SurfShark
         private void PictureBox2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Function not implemented!");
+        }
+
+
+        public override string[] ListNotificationInterests()
+        {
+            return new string[] { SHOW_MAIN };
+        }
+
+        public override void HandleNotification(INotification notification)
+        {
+            switch(notification.Name)
+            {
+                case SHOW_MAIN:
+                    if (notification.Body is LoginResponse data)
+                    {
+                        MemberTypExd.Text = data.MemberType.ToString();
+                        Surfed.Text = data.SurfedSites.ToString();
+                        Minutes.Text = data.Credits.ToString();
+                        MainCache.Credit = data.Credits;
+                        MainCache.Urs = data.sites;
+                        return;
+                    }
+                    MainComponent.Core.SendNotification(SHOW_LOGIN);
+                    break;
+            }
         }
     }
 }

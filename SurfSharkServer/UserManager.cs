@@ -2,9 +2,11 @@
 using NHibernate;
 using NHibernate.Cfg;
 using SurfSharkServer.com;
+using SurfSharkServer.Communication.Packets.Data;
 using SurfSharkServer.MySQL.Tables;
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -55,6 +57,21 @@ public class UserManager
                 return new User(account);
         }
         return null;
+    }
+
+    public SiteClass[] GetUserSites(uint UserId)
+    {
+        List<SiteClass> response = new List<SiteClass>();
+        ISession session = DbService.GetDBSession;
+        if (session != null && session.IsConnected)
+        {           
+            UserUrls[] urls = session.QueryOver<UserUrls>().Where(x => x.UID == UserId).List().ToArray();
+            foreach(UserUrls url in urls)
+            {
+                response.Add(new SiteClass(url));
+            }
+        }
+        return response.ToArray();
     }
 
     public void AddOnline(uint ConnectionId, User user)

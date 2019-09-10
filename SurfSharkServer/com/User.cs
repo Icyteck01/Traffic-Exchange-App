@@ -5,7 +5,7 @@ namespace SurfSharkServer.com
 {
     public class User 
     {
-        public uint UID = 0;
+        public uint UID => _data.UserId;
         public UserAccounts _data;
 
         public User(UserAccounts account)

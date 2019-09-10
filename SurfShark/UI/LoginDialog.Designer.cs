@@ -453,7 +453,7 @@
             // 
             // LoginDialog
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(718, 512);
             this.Controls.Add(this.RegisterTabPage);
             this.Controls.Add(this.notice);

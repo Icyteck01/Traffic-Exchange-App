@@ -1,9 +1,4 @@
 ﻿using JHSEngine.Patterns.Mediator;
-using JHUI.Forms;
-using SurfShark;
-using SurfShark.Core;
-using SurfShark.Core.Constants;
-using SurfShark.program;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -79,7 +74,7 @@ namespace SurfShark
 
         public void Navigate_to(string url)
         {
-
+            /*
             this.EndInvoke(this.BeginInvoke((Action)(() =>
             {
                 this.label8.Text = getAlexa(url).ToString();
@@ -124,6 +119,7 @@ namespace SurfShark
                 this.TotalMinutesTxt.Text = tsx + " Minute" + (tsx > 0 ? "s" : "");
             }))
             );
+            */
         }
 
         private void startTick()
@@ -197,7 +193,7 @@ namespace SurfShark
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You get " + (10 + int.Parse(ProgramVars.surfed) * 0.02) + " seconds when this status is full!");
+           // MessageBox.Show("You get " + (10 + int.Parse(ProgramVars.surfed) * 0.02) + " seconds when this status is full!");
         }
 
         private void Button1_Click(object sender, EventArgs e)

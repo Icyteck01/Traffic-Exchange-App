@@ -112,6 +112,7 @@ namespace SurfShark.Core
             loginForm = new LoginDialog();
             mainForm = new CoreSystem();
             Core.RegisterMediator(loginForm);
+            Core.RegisterMediator(mainForm);
 
             Core.RegisterCommand(DO_LOGIN, new DoLogin());
             Core.RegisterCommand(DO_REGISTER, new DoRegister());

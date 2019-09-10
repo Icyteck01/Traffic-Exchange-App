@@ -1,5 +1,6 @@
 ﻿using JHSNetProtocol;
 using SurfSharkServer.Communication.Packets.Data;
+using SurfSharkServer.Network.Enums;
 
 namespace SurfSharkServer.Communication.Packets
 {
@@ -29,8 +30,10 @@ namespace SurfSharkServer.Communication.Packets
                         WebsiteName = reader.ReadString(),
                         Url = reader.ReadString(),
                         Time = reader.ReadPackedUInt32(),
+                        ViewCount = reader.ReadPackedUInt32(),
                         IsActive = reader.ReadBoolean(),
-                        Region = (CountryList)reader.ReadByte()
+                        Region = (CountryList)reader.ReadByte(),
+                        Referral = (ReferralType)reader.ReadByte()
                     };
                 }
             }
@@ -51,8 +54,10 @@ namespace SurfSharkServer.Communication.Packets
                     writer.Write(sites[i].WebsiteName);
                     writer.Write(sites[i].Url);
                     writer.WritePackedUInt32(sites[i].Time);
+                    writer.WritePackedUInt32(sites[i].ViewCount);
                     writer.Write(sites[i].IsActive);
                     writer.Write((byte)sites[i].Region);
+                    writer.Write((byte)sites[i].Referral);
                 }
             }
         }

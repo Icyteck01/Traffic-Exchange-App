@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SurfSharkServer.Network.Enums;
+using System;
 
 namespace SurfSharkServer.Communication.Packets.Data
 {
@@ -11,5 +12,7 @@ namespace SurfSharkServer.Communication.Packets.Data
         public uint Time = 0;
         public bool IsActive = false;
         public CountryList Region = CountryList.United_States;
+        public ReferralType Referral = ReferralType.DIRECT;
+        public uint ViewCount = 0;
     }
 }

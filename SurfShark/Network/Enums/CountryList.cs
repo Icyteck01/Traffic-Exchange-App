@@ -1,5 +1,6 @@
 ﻿public enum CountryList
 {
+    International,
     Afghanistan,
     Albania,
     Algeria,

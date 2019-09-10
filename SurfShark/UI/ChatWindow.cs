@@ -1,11 +1,7 @@
 ﻿using JHSEngine.Patterns.Mediator;
-using JHUI.Forms;
-using Newtonsoft.Json;
 using SurfShark.Communication.Packets;
 using SurfShark.Core;
 using SurfShark.Core.Constants;
-using SurfShark.program;
-using SurfShark.programs;
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,11 +19,10 @@ namespace SurfShark
         internal void LoadAll()
         {
             checkBox1.Checked = MainCache.chatEnabled;
-            ProgramVars.chatList.Reverse();
             chatTextBox.Text = "";
             var sb = new StringBuilder();
             sb.Append(@"{\rtf1\ansi");
-            foreach (ChatResponse chat in ProgramVars.chatList)
+            foreach (ChatResponse chat in MainCache.chatList)
             {
                 string msg = chat.Message;
                 string UserName = chat.UserName;
