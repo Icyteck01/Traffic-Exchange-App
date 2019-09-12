@@ -12,7 +12,7 @@ namespace CommonDB.model
         private object entity;
         private long ttl = FIVE_SECOND_MILISECONDS;
         private long createTime = CurrentTimeMillis();
-        private long expireTime = 0l;
+        private long expireTime = 0L;
 
         private static readonly DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 

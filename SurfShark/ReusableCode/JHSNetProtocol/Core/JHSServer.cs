@@ -36,7 +36,8 @@ namespace JHSNetProtocol
             {
                 _receiveSocket.Bind(localEndPoint);
                 _receiveSocket.Listen(100);
-                JHSDebug.Log("JHSNetworkServer :: Started to listen :" + ipAddress.ToString() + " Port:" + NetConfig.Port + " Protocol Version:" + NetConfig.Version);
+                if (NetConfig.logFilter >= JHSLogFilter.Developer) JHSDebug.Log("JHSNetworkServer :: Started to listen :" + ipAddress.ToString() + " Port:" + NetConfig.Port + " Protocol Version:" + NetConfig.Version);
+                else JHSDebug.Log("Server Started IP[" + ipAddress.ToString() + ":" + NetConfig.Port + "] Version:[" + NetConfig.Version+"]");
                 _receiveSocket.BeginAccept(new AsyncCallback(AcceptCallback), _receiveSocket);
             }
             catch (Exception e)

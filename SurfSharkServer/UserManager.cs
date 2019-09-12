@@ -1,8 +1,10 @@
 ﻿using CommonDB;
+using JHSNetProtocol;
 using NHibernate;
 using NHibernate.Cfg;
 using SurfSharkServer.com;
 using SurfSharkServer.Communication.Packets.Data;
+using SurfSharkServer.MySQL;
 using SurfSharkServer.MySQL.Tables;
 using System;
 using System.Collections.Concurrent;
@@ -32,12 +34,39 @@ public class UserManager
         }
     }
 
-
     protected ConcurrentDictionary<uint, User> ConnectedUsers = new ConcurrentDictionary<uint, User>();
     protected ConcurrentDictionary<string, uint> Users_UserName = new ConcurrentDictionary<string, uint>();
     public UserManager()
     {
+        LateInvoker.InvokeRepeating(UpdateCredit, 1);
+    }
 
+    private void UpdateCredit()
+    {
+        ISession session = DbService.GetDBSession;
+        if(session != null)
+        {
+            var sql = "SELECT id,UID,credits,status FROM transactions WHERE status = 1";
+            var query = session.CreateSQLQuery(sql).AddEntity(typeof(Transactions));
+            IList<Transactions> objectList = query.List<Transactions>();
+            foreach (Transactions transaction in objectList)
+            {
+                UserAccounts user = DbService.GetFromCache<UserAccounts>(transaction.UID);
+                if(user != null)
+                {
+                    user.credits += transaction.credits;
+                    DbService.RemoveEntityFromDatabase<Transactions>(transaction.id);
+                    DbService.UpdateEntityIntime(user.UserId, user);
+                    LOG.Info("UserManager :: UpdateCredit UserId[" + transaction.id + "] Added[" + transaction.credits + "] Total["+user.credits+"]");
+                }
+            
+            }
+        }
+    }
+
+    public User GetUserByUserID(uint uID)
+    {
+       return new User(DbService.GetFromCache<UserAccounts>(uID));
     }
 
     public User GetUserByConnectionId(uint connectionId)
@@ -68,7 +97,7 @@ public class UserManager
             UserUrls[] urls = session.QueryOver<UserUrls>().Where(x => x.UID == UserId).List().ToArray();
             foreach(UserUrls url in urls)
             {
-                response.Add(new SiteClass(url));
+                response.Add(new SiteClass(DbService.GetFromCache<UserUrls>(url.id)));
             }
         }
         return response.ToArray();
@@ -83,8 +112,10 @@ public class UserManager
     {
         if (ConnectedUsers.TryRemove(connectionId, out User x1))
         {
-
+            ChatManager.Instance.RemoveFromView(connectionId);
+            DbService.UpdateEntityIntime(x1.UserId, x1._data);
         }
     }
+
 }
 

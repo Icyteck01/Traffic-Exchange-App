@@ -89,6 +89,8 @@
     <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,7 +101,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -178,10 +180,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CMD\DoAskNextUrl.cs" />
+    <Compile Include="Core\CMD\DoUpdateSites.cs" />
     <Compile Include="Core\MainComponent.Designer.cs">
       <DependentUpon>MainComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Core\SitesManager.cs" />
     <Compile Include="Network\Enums\ReferralType.cs" />
+    <Compile Include="Network\Enums\UpdateOperation.cs" />
+    <Compile Include="Network\Packets\Ask4NewURL.cs" />
+    <Compile Include="Network\Packets\ChatMsg.cs" />
+    <Compile Include="Network\Packets\UrlDetails.cs" />
+    <Compile Include="Network\Packets\UserOpenChat.cs" />
+    <Compile Include="ReusableCode\JHSNetProtocol\Utils\LateInvoker.cs" />
     <Compile Include="UI\ChatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,7 +207,6 @@
     <Compile Include="Network\Packets\Login.cs" />
     <Compile Include="Network\Packets\LoginResponse.cs" />
     <Compile Include="Network\Packets\Register.cs" />
-    <Compile Include="Network\Packets\RemoveSite.cs" />
     <Compile Include="ReusableCode\Utils\PasswordUtils.cs" />
     <Compile Include="Core\CMD\DoRegister.cs" />
     <Compile Include="Core\CMD\DoLogin.cs" />
@@ -262,7 +272,6 @@
     <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Notifier.cs" />
     <Compile Include="ReusableCode\Puremvc\Patterns\Observer\Observer.cs" />
     <Compile Include="ReusableCode\Puremvc\Patterns\Proxy\Proxy.cs" />
-    <Compile Include="Network\Packets\ChatResponse.cs" />
     <Compile Include="Network\Constants\NetworkCommands.cs" />
     <Compile Include="UI\CoreSystem.cs">
       <SubType>Form</SubType>
@@ -270,14 +279,14 @@
     <Compile Include="UI\CoreSystem.designer.cs">
       <DependentUpon>CoreSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Network\Packets\DefaultResponse.cs" />
+    <Compile Include="Network\Packets\SubmitDataForUpdate.cs" />
     <Compile Include="UI\LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Network\Constants\TransitOperation.cs" />
+    <Compile Include="Network\Constants\NetworkConstants.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\img\GrooveShark2.png" />

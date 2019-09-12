@@ -19,6 +19,9 @@ namespace SurfShark.Core
         private ToolStripMenuItem testToolStripMenuItem;
         private ToolStripMenuItem tEst2ToolStripMenuItem;
         private CoreSystem mainForm;
+        private ChatWindow chatWindow;
+        private UrlUtilityForm urlEditor;
+        private SurfShark surfShark;
 
         public static IFacade Core { get; set; }
         public MainComponent()
@@ -38,7 +41,11 @@ namespace SurfShark.Core
                 SHOW_MAIN,
                 SHOW_REGISTER,
                 DO_EXIT_PROGRAM,
-                EVENT_RESIZE
+                EVENT_RESIZE,
+                SHOW_CHAT_WINDOW,
+                START_SURFING,
+                STOP_SURFING,
+                SHOW_URL_EDITOR
             };
         }
 
@@ -74,9 +81,77 @@ namespace SurfShark.Core
 
                     break;
                 case SHOW_MAIN:
-                    HideAll();             
+                    HideAll();
                     mainForm.WindowState = FormWindowState.Normal;
                     mainForm.Show();
+                    break;
+                case STOP_SURFING:
+                    if (surfShark != null)
+                    {
+                        surfShark.WindowState = FormWindowState.Minimized;
+                        surfShark.ShowInTaskbar = surfShark.ShowIcon = false;
+                    }
+                    break;
+                case START_SURFING:
+                    if (surfShark == null)
+                    {
+                        surfShark = new SurfShark();
+                        Core.RegisterMediator(surfShark);
+                        surfShark.Show();
+                        MainComponent.Core.SendNotification(ASK_4_NEW_URL);
+                        return;
+                    }
+                    if (surfShark.WindowState != FormWindowState.Normal)
+                    {
+                        surfShark.WindowState = FormWindowState.Normal;
+                        surfShark.ShowInTaskbar = surfShark.ShowIcon = true;
+                    }
+                    else
+                    {
+                        surfShark.WindowState = FormWindowState.Normal;
+                        surfShark.ShowInTaskbar = surfShark.ShowIcon = true;
+                        surfShark.Focus();
+                    }
+                    break;
+                case SHOW_URL_EDITOR:
+                    if (urlEditor == null)
+                    {
+                        urlEditor = new UrlUtilityForm();
+                        Core.RegisterMediator(urlEditor);
+                        urlEditor.Show();
+                        Core.SendNotification(LOAD_URL_EDITOR);
+                        return;
+                    }
+                    if (urlEditor.WindowState != FormWindowState.Normal)
+                    {
+                        urlEditor.WindowState = FormWindowState.Normal;
+                        urlEditor.ShowInTaskbar = urlEditor.ShowIcon = true;
+                        Core.SendNotification(LOAD_URL_EDITOR);
+                    }
+                    else
+                    {
+                        urlEditor.WindowState = FormWindowState.Minimized;
+                        urlEditor.ShowInTaskbar = urlEditor.ShowIcon = false;
+                    }
+                    break;
+                case SHOW_CHAT_WINDOW:
+                    if(chatWindow == null)
+                    {
+                        chatWindow = new ChatWindow();
+                        Core.RegisterMediator(chatWindow);
+                        chatWindow.Show();
+                        return;
+                    }
+                    if (chatWindow.WindowState != FormWindowState.Normal)
+                    {
+                        chatWindow.WindowState = FormWindowState.Normal;
+                        chatWindow.ShowInTaskbar = chatWindow.ShowIcon = true;
+                    }
+                    else
+                    {
+                        chatWindow.WindowState = FormWindowState.Minimized;
+                        chatWindow.ShowInTaskbar = chatWindow.ShowIcon = false;
+                    }
                     break;
                 case DO_EXIT_PROGRAM:
                     Application.Exit();
@@ -92,8 +167,8 @@ namespace SurfShark.Core
                         }
                         else
                         {
-                            mainForm.WindowState = FormWindowState.Minimized;
                             mainForm.Hide();
+                            mainForm.WindowState = FormWindowState.Minimized;
                         }
                     }
                     break;
@@ -111,11 +186,15 @@ namespace SurfShark.Core
             LoginDialog.CheckForIllegalCrossThreadCalls = false;
             loginForm = new LoginDialog();
             mainForm = new CoreSystem();
+
             Core.RegisterMediator(loginForm);
             Core.RegisterMediator(mainForm);
+            
 
             Core.RegisterCommand(DO_LOGIN, new DoLogin());
             Core.RegisterCommand(DO_REGISTER, new DoRegister());
+            Core.RegisterCommand(DO_UPDATE_SITES, new DoUpdateSites());
+            Core.RegisterCommand(ASK_4_NEW_URL, new DoAskNextUrl());
             Core.SendNotification(SHOW_LOGIN);
 
             NetworkManager.Start();

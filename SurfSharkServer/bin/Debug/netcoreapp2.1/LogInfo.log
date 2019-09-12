@@ -1,0 +1,493 @@
+2019-09-12 11:25:17,199 THREAD[1] INFO JHSNetProtocol.JHSDebug - JHSNetworkServer :: Started to listen :0.0.0.0 Port:10000 Protocol Version:1
+2019-09-12 11:25:17,227 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:25:50,331 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 11:25:50,332 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 11:25:56,183 THREAD[1] INFO JHSNetProtocol.JHSDebug - JHSNetworkServer :: Started to listen :0.0.0.0 Port:10000 Protocol Version:1
+2019-09-12 11:25:56,209 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:26:51,828 THREAD[4] INFO JHSNetProtocol.JHSDebug - JHSNetworkManager :: Connected:1
+2019-09-12 11:27:24,632 THREAD[4] INFO JHSNetProtocol.JHSDebug - JHSStatisiticsManager :: connectionId:1 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:27:24,632 THREAD[4] INFO JHSNetProtocol.JHSDebug - JHSNetworkManager :: Disconnected :1
+2019-09-12 11:30:23,912 THREAD[1] INFO JHSNetProtocol.JHSDebug - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:30:23,938 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:31:07,034 THREAD[1] INFO JHSNetProtocol.JHSDebug - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:31:07,068 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:32:51,710 THREAD[4] INFO JHSNetProtocol.JHSDebug - JHSNetworkManager :: Connected:1
+2019-09-12 11:32:55,158 THREAD[4] INFO JHSNetProtocol.JHSDebug - JHSStatisiticsManager :: connectionId:1 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 11:32:55,159 THREAD[4] INFO JHSNetProtocol.JHSDebug - JHSNetworkManager :: Disconnected :1
+2019-09-12 11:32:58,617 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 11:32:58,618 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 11:36:21,703 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:36:21,729 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:36:26,115 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 11:36:26,117 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 11:36:59,580 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:36:59,607 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:37:00,067 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 11:38:30,902 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:90 BitesRev:117 PacketsSend:4 PacketsRec:5 ReadErrors:0 SendError:0
+2019-09-12 11:38:30,903 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 11:39:08,818 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 11:39:08,854 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 11:41:24,811 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:41:24,837 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:41:46,546 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 11:43:19,568 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:216 BitesRev:114 PacketsSend:5 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 11:43:19,569 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 11:44:14,450 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 11:44:35,840 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:117 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:44:35,841 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 11:44:40,504 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:3
+2019-09-12 11:44:51,724 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:3 BytesSent:117 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:44:51,725 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :3
+2019-09-12 11:45:07,526 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 11:45:07,563 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 11:45:30,624 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:45:30,650 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:45:33,251 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 11:45:33,252 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 11:45:44,226 INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:45:44,251 ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:46:00,650 INFO - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:46:00,675 ERROR - No error, server started!
+2019-09-12 11:46:19,365 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 11:46:19,391 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 11:46:31,446 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 11:47:24,994 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:128 BitesRev:99 PacketsSend:4 PacketsRec:5 ReadErrors:0 SendError:0
+2019-09-12 11:47:24,994 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 11:49:24,268 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 11:49:53,551 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:49:53,552 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 11:54:36,212 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:3
+2019-09-12 11:54:39,610 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:3 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 11:54:39,611 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :3
+2019-09-12 11:54:47,870 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:4
+2019-09-12 11:55:43,381 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:4 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:55:43,382 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :4
+2019-09-12 11:56:25,174 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:5
+2019-09-12 11:56:39,313 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:5 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:56:39,314 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :5
+2019-09-12 11:57:00,523 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:6
+2019-09-12 11:57:29,749 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:6 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:57:29,749 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :6
+2019-09-12 11:58:31,424 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:7
+2019-09-12 11:59:00,550 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:7 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 11:59:00,551 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :7
+2019-09-12 11:59:33,996 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:8
+2019-09-12 11:59:37,444 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:8 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 11:59:37,444 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :8
+2019-09-12 11:59:54,077 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:9
+2019-09-12 12:00:11,762 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:9 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:00:11,762 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :9
+2019-09-12 12:00:50,429 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:10
+2019-09-12 12:01:19,815 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:10 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:01:19,816 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :10
+2019-09-12 12:01:28,116 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:11
+2019-09-12 12:02:19,975 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:11 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:02:19,975 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :11
+2019-09-12 12:04:32,052 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:12
+2019-09-12 12:04:42,948 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:12 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:04:42,948 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :12
+2019-09-12 12:05:12,503 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:13
+2019-09-12 12:05:33,165 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:13 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:05:33,165 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :13
+2019-09-12 12:05:58,537 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:14
+2019-09-12 12:06:05,679 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:14 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:06:05,679 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :14
+2019-09-12 12:07:00,305 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:15
+2019-09-12 12:07:07,836 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:15 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:07:07,837 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :15
+2019-09-12 12:07:13,410 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:16
+2019-09-12 12:07:49,743 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:16 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:07:49,744 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :16
+2019-09-12 12:07:52,880 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:17
+2019-09-12 12:08:14,678 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:17 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:08:14,678 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :17
+2019-09-12 12:08:49,836 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:18
+2019-09-12 12:09:42,466 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:18 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:09:42,466 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :18
+2019-09-12 12:13:43,287 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:19
+2019-09-12 12:13:58,700 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:19 BytesSent:137 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:13:58,700 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :19
+2019-09-12 12:14:09,039 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:20
+2019-09-12 12:15:07,251 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:20 BytesSent:275 BitesRev:95 PacketsSend:5 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 12:15:07,252 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :20
+2019-09-12 12:16:31,946 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:21
+2019-09-12 12:16:46,557 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:21 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:16:46,557 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :21
+2019-09-12 12:16:59,780 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:22
+2019-09-12 12:17:17,430 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:22 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:17:17,430 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :22
+2019-09-12 12:17:35,685 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:23
+2019-09-12 12:17:51,134 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:23 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:17:51,134 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :23
+2019-09-12 12:19:01,056 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:24
+2019-09-12 12:20:00,396 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:24 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:20:00,396 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :24
+2019-09-12 12:23:06,664 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:25
+2019-09-12 12:23:24,943 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:25 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:23:24,943 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :25
+2019-09-12 12:24:23,167 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:26
+2019-09-12 12:24:51,803 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:26 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:24:51,804 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :26
+2019-09-12 12:25:26,529 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:27
+2019-09-12 12:25:45,433 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:27 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:25:45,433 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :27
+2019-09-12 12:26:04,253 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:28
+2019-09-12 12:26:21,037 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:28 BytesSent:90 BitesRev:92 PacketsSend:4 PacketsRec:5 ReadErrors:0 SendError:0
+2019-09-12 12:26:21,037 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :28
+2019-09-12 12:41:49,440 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:29
+2019-09-12 12:42:04,853 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:29 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:42:04,853 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :29
+2019-09-12 12:42:43,880 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:30
+2019-09-12 12:43:01,760 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:30 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:43:01,760 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :30
+2019-09-12 12:45:48,308 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:31
+2019-09-12 12:46:08,627 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:31 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:46:08,627 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :31
+2019-09-12 12:47:16,199 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:32
+2019-09-12 12:47:43,997 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:32 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:47:43,997 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :32
+2019-09-12 12:51:28,773 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:33
+2019-09-12 12:51:53,599 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:33 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:51:53,599 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :33
+2019-09-12 12:56:59,736 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:34
+2019-09-12 12:57:25,444 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:34 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 12:57:25,444 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :34
+2019-09-12 13:05:24,558 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:35
+2019-09-12 13:06:00,109 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:35 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:06:00,110 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :35
+2019-09-12 13:06:44,764 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:36
+2019-09-12 13:07:03,613 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:36 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:07:03,614 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :36
+2019-09-12 13:07:32,716 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:37
+2019-09-12 13:07:54,048 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:37 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:07:54,048 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :37
+2019-09-12 13:08:38,692 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:38
+2019-09-12 13:08:55,236 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:38 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:08:55,236 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :38
+2019-09-12 13:10:53,731 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:39
+2019-09-12 13:11:18,882 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:39 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:11:18,883 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :39
+2019-09-12 13:21:18,780 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:40
+2019-09-12 13:21:57,286 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:40 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:21:57,286 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :40
+2019-09-12 13:22:34,906 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:41
+2019-09-12 13:22:38,422 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:41 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 13:22:38,422 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :41
+2019-09-12 13:23:52,510 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:42
+2019-09-12 13:24:20,791 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:42 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:24:20,792 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :42
+2019-09-12 13:37:36,238 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:43
+2019-09-12 13:38:00,831 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:43 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:38:00,831 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :43
+2019-09-12 13:46:08,268 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:44
+2019-09-12 13:46:37,032 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:44 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:46:37,032 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :44
+2019-09-12 13:49:50,402 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:45
+2019-09-12 13:50:03,088 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:45 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:50:03,088 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :45
+2019-09-12 13:50:10,033 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:46
+2019-09-12 13:50:30,469 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:46 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:50:30,470 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :46
+2019-09-12 13:50:38,942 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:47
+2019-09-12 13:51:08,604 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:47 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:51:08,604 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :47
+2019-09-12 13:53:39,388 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:48
+2019-09-12 13:54:02,988 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:48 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:54:02,988 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :48
+2019-09-12 13:56:20,350 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:49
+2019-09-12 13:56:33,211 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:49 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:56:33,211 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :49
+2019-09-12 13:56:52,216 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:50
+2019-09-12 13:57:20,861 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:50 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:57:20,862 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :50
+2019-09-12 13:58:41,368 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:51
+2019-09-12 13:58:52,741 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:51 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:58:52,742 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :51
+2019-09-12 13:59:04,997 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:52
+2019-09-12 13:59:14,395 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:52 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 13:59:14,395 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :52
+2019-09-12 14:20:42,142 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:53
+2019-09-12 14:21:04,406 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:53 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:21:04,407 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :53
+2019-09-12 14:22:15,052 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:54
+2019-09-12 14:22:41,621 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:54 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:22:41,621 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :54
+2019-09-12 14:22:53,961 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:55
+2019-09-12 14:23:04,579 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:55 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:23:04,579 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :55
+2019-09-12 14:23:42,612 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:56
+2019-09-12 14:24:52,273 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:56 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:24:52,273 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :56
+2019-09-12 14:25:03,039 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:57
+2019-09-12 14:27:29,192 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:57 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:27:29,193 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :57
+2019-09-12 14:28:15,564 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:58
+2019-09-12 14:28:15,948 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:58 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 14:28:15,949 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :58
+2019-09-12 14:28:24,573 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:59
+2019-09-12 14:29:01,205 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:59 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:29:01,205 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :59
+2019-09-12 14:31:12,192 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:60
+2019-09-12 14:33:39,940 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:60 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:33:39,940 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :60
+2019-09-12 14:33:43,616 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:61
+2019-09-12 14:34:17,105 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:61 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:34:17,105 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :61
+2019-09-12 14:36:17,987 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:62
+2019-09-12 14:37:00,088 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:62 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:37:00,089 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :62
+2019-09-12 14:37:53,522 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 14:37:53,527 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 14:47:03,932 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 14:47:03,956 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 14:47:04,388 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 14:47:26,533 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:47:26,534 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 14:47:38,931 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 14:47:53,153 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:47:53,153 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 14:48:22,528 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:3
+2019-09-12 14:48:27,865 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:3 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:48:27,865 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :3
+2019-09-12 14:48:52,069 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:4
+2019-09-12 14:49:01,313 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:4 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:49:01,314 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :4
+2019-09-12 14:49:18,241 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:5
+2019-09-12 14:49:41,279 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:5 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:49:41,280 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :5
+2019-09-12 14:49:49,461 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:6
+2019-09-12 14:49:57,941 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:6 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:49:57,941 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :6
+2019-09-12 14:50:20,986 THREAD[13] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:7
+2019-09-12 14:50:45,846 THREAD[13] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:7 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 14:50:45,847 THREAD[13] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :7
+2019-09-12 15:00:51,300 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:8
+2019-09-12 15:01:41,635 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:8 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:01:41,635 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :8
+2019-09-12 15:02:11,101 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:9
+2019-09-12 15:02:29,775 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:9 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:02:29,776 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :9
+2019-09-12 15:05:19,545 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:10
+2019-09-12 15:05:20,423 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:10 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 15:05:20,424 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :10
+2019-09-12 15:06:57,759 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:11
+2019-09-12 15:07:22,512 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:11 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:07:22,512 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :11
+2019-09-12 15:07:45,121 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:12
+2019-09-12 15:07:50,545 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:12 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:07:50,546 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :12
+2019-09-12 15:07:55,080 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:13
+2019-09-12 15:08:27,513 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:13 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:08:27,514 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :13
+2019-09-12 15:08:34,958 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:14
+2019-09-12 15:08:46,382 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:14 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:08:46,382 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :14
+2019-09-12 15:09:09,336 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:15
+2019-09-12 15:09:51,588 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:15 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:09:51,588 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :15
+2019-09-12 15:10:15,706 THREAD[12] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:16
+2019-09-12 15:11:28,231 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:16 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:11:28,231 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :16
+2019-09-12 15:12:04,563 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:17
+2019-09-12 15:13:05,856 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:17 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:13:05,857 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :17
+2019-09-12 15:13:41,917 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:18
+2019-09-12 15:14:19,394 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:18 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:14:19,394 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :18
+2019-09-12 15:14:28,451 THREAD[12] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:19
+2019-09-12 15:15:54,287 THREAD[12] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:19 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:15:54,288 THREAD[12] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :19
+2019-09-12 15:27:35,014 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:20
+2019-09-12 15:27:46,496 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:20 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:27:46,497 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :20
+2019-09-12 15:29:31,006 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:21
+2019-09-12 15:30:02,133 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:21 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:30:02,134 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :21
+2019-09-12 15:33:17,719 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:22
+2019-09-12 15:33:58,682 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:22 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:33:58,682 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :22
+2019-09-12 15:34:01,986 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:23
+2019-09-12 15:34:09,257 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:23 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:34:09,257 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :23
+2019-09-12 15:34:41,641 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:24
+2019-09-12 15:34:59,764 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:24 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:34:59,765 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :24
+2019-09-12 15:35:14,849 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:25
+2019-09-12 15:36:04,353 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:25 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:36:04,353 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :25
+2019-09-12 15:36:20,564 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:26
+2019-09-12 15:36:31,910 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:26 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:36:31,911 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :26
+2019-09-12 15:36:35,320 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:27
+2019-09-12 15:37:37,382 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:27 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:37:37,383 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :27
+2019-09-12 15:37:56,627 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:28
+2019-09-12 15:40:46,414 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:28 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:40:46,415 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :28
+2019-09-12 15:45:23,502 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:29
+2019-09-12 15:45:52,589 THREAD[9] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:29 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:45:52,589 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :29
+2019-09-12 15:47:22,228 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:30
+2019-09-12 15:47:50,372 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:30 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:47:50,373 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :30
+2019-09-12 15:47:53,287 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:31
+2019-09-12 15:48:00,612 THREAD[11] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:31 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:48:00,612 THREAD[11] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :31
+2019-09-12 15:48:23,604 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:32
+2019-09-12 15:48:34,695 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:32 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:48:34,695 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :32
+2019-09-12 15:52:01,076 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 15:52:01,101 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 15:52:03,250 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 15:52:25,352 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:52:25,353 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 15:52:31,255 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 15:52:48,278 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:79 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 15:52:48,278 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 16:18:28,287 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:18:28,313 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:18:38,886 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 16:19:49,634 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:19:49,660 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:19:50,584 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:0 BitesRev:0 PacketsSend:0 PacketsRec:0 ReadErrors:0 SendError:0
+2019-09-12 16:19:50,585 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 16:21:50,511 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 16:23:28,395 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:23:28,421 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:23:28,853 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 16:24:49,978 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:24:50,003 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:24:51,181 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 16:25:11,815 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 16:25:11,923 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 16:25:36,725 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:25:36,750 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:25:37,028 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 16:47:15,404 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:47:15,430 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:47:18,136 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 16:48:17,172 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 16:48:17,198 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 16:48:17,578 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:03:58,464 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:03:58,495 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:03:58,964 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:04:41,390 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:25 BitesRev:174 PacketsSend:2 PacketsRec:8 ReadErrors:0 SendError:0
+2019-09-12 17:04:41,391 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:04:44,775 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 17:04:52,122 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 17:04:52,123 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 17:04:57,664 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:04:57,688 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:04:57,969 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:06:25,589 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:06:25,614 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:06:26,199 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:07:22,057 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:140 BitesRev:114 PacketsSend:5 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 17:07:22,057 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:07:37,732 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:07:37,758 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:07:41,751 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:08:12,835 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:101 BitesRev:151 PacketsSend:5 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 17:08:12,836 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:23:19,920 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:23:19,946 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:23:28,318 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:24:31,767 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:24:31,792 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:24:32,448 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:24:55,935 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:225 BitesRev:85 PacketsSend:5 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 17:24:55,935 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:24:56,803 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 17:24:56,804 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 17:27:25,785 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:27:25,814 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:27:33,581 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:29:56,939 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:546 BitesRev:135 PacketsSend:10 PacketsRec:11 ReadErrors:0 SendError:0
+2019-09-12 17:29:56,939 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:34:09,705 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:34:09,730 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:34:13,897 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:36:14,039 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:431 BitesRev:105 PacketsSend:7 PacketsRec:8 ReadErrors:0 SendError:0
+2019-09-12 17:36:14,040 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:36:22,996 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 17:36:25,174 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:25 BitesRev:38 PacketsSend:2 PacketsRec:3 ReadErrors:0 SendError:0
+2019-09-12 17:36:25,174 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 17:36:27,910 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 17:36:27,911 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 17:37:09,795 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:37:09,821 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:37:17,373 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:37:37,828 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:224 BitesRev:85 PacketsSend:5 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 17:37:37,829 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 17:37:59,717 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 17:38:18,619 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:428 BitesRev:125 PacketsSend:9 PacketsRec:10 ReadErrors:0 SendError:0
+2019-09-12 17:38:18,620 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 17:38:46,345 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:3
+2019-09-12 17:39:05,607 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:3 BytesSent:168 BitesRev:75 PacketsSend:4 PacketsRec:5 ReadErrors:0 SendError:0
+2019-09-12 17:39:05,607 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :3
+2019-09-12 17:39:36,203 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:4
+2019-09-12 17:39:58,212 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:4 BytesSent:168 BitesRev:75 PacketsSend:4 PacketsRec:5 ReadErrors:0 SendError:0
+2019-09-12 17:39:58,212 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :4
+2019-09-12 17:40:17,986 THREAD[12] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:5
+2019-09-12 17:42:49,683 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 17:42:49,708 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 17:42:52,733 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 17:45:22,075 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 17:45:22,085 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 18:14:04,181 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 18:14:04,209 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 18:14:04,432 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 18:16:29,799 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:10000] Version:[1]
+2019-09-12 18:16:29,824 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 18:16:32,684 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 18:16:59,778 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:145 BitesRev:95 PacketsSend:4 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 18:16:59,779 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 18:19:25,023 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 18:19:50,263 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:148 BitesRev:119 PacketsSend:4 PacketsRec:7 ReadErrors:0 SendError:0
+2019-09-12 18:19:50,264 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 18:19:54,832 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:3
+2019-09-12 18:20:30,960 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:3 BytesSent:231 BitesRev:186 PacketsSend:7 PacketsRec:11 ReadErrors:0 SendError:0
+2019-09-12 18:20:30,961 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :3
+2019-09-12 18:21:05,254 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 18:21:05,255 THREAD[2] INFO SurfSharkServer.Program - Server is now down.
+2019-09-12 18:22:02,883 THREAD[1] INFO SurfSharkServer.Program - Server Started IP[0.0.0.0:7777] Version:[1]
+2019-09-12 18:22:02,908 THREAD[1] ERROR SurfSharkServer.Program - No error, server started!
+2019-09-12 18:22:08,101 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:1
+2019-09-12 18:22:18,887 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:1 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:22:18,888 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :1
+2019-09-12 18:22:55,931 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:2
+2019-09-12 18:23:54,683 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:3
+2019-09-12 18:26:31,646 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:3 BytesSent:544 BitesRev:171 PacketsSend:12 PacketsRec:12 ReadErrors:0 SendError:0
+2019-09-12 18:26:31,646 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :3
+2019-09-12 18:28:19,801 THREAD[4] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:2 BytesSent:204 BitesRev:112 PacketsSend:6 PacketsRec:7 ReadErrors:0 SendError:0
+2019-09-12 18:28:19,802 THREAD[4] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :2
+2019-09-12 18:29:36,508 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:4
+2019-09-12 18:30:10,022 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:4 BytesSent:147 BitesRev:97 PacketsSend:4 PacketsRec:6 ReadErrors:0 SendError:0
+2019-09-12 18:30:10,022 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :4
+2019-09-12 18:30:48,699 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:5
+2019-09-12 18:30:59,331 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:5 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:30:59,331 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :5
+2019-09-12 18:42:59,514 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:6
+2019-09-12 18:43:27,934 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:6 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:43:27,934 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :6
+2019-09-12 18:44:10,923 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:7
+2019-09-12 18:44:20,881 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:7 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:44:20,881 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :7
+2019-09-12 18:44:39,756 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:8
+2019-09-12 18:44:52,138 THREAD[5] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:8 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:44:52,138 THREAD[5] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :8
+2019-09-12 18:45:12,890 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:9
+2019-09-12 18:45:48,313 THREAD[8] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:9 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:45:48,314 THREAD[8] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :9
+2019-09-12 18:46:44,286 THREAD[9] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:10
+2019-09-12 18:48:02,661 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:10 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:48:02,662 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :10
+2019-09-12 18:48:06,468 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:11
+2019-09-12 18:48:19,092 THREAD[7] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:11 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:48:19,092 THREAD[7] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :11
+2019-09-12 18:48:56,069 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Connected:12
+2019-09-12 18:49:18,245 THREAD[10] INFO SurfSharkServer.Program - JHSStatisiticsManager :: connectionId:12 BytesSent:116 BitesRev:65 PacketsSend:3 PacketsRec:4 ReadErrors:0 SendError:0
+2019-09-12 18:49:18,245 THREAD[10] INFO SurfSharkServer.Program - JHSNetworkManager :: Disconnected :12
+2019-09-12 18:49:42,820 THREAD[2] INFO SurfSharkServer.Program - Saving Database.
+2019-09-12 18:49:42,821 THREAD[2] INFO SurfSharkServer.Program - Server is now down.

@@ -1,6 +1,4 @@
-﻿using log4net;
-using System;
-using System.Reflection;
+﻿using System;
 
 namespace JHSNetProtocol
 {
@@ -17,12 +15,12 @@ namespace JHSNetProtocol
 
     public static class JHSDebug
     {
-    //  public static IJHSLogger LogReciver = null;
-        private static readonly ILog LogReciver = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        //  public static IJHSLogger LogReciver = null;
+        public static IJHSLogger LogReciver = null;
         public static void LogWarning(string v)
         {
             if (LogReciver != null)
-                LogReciver.Warn(v);
+                LogReciver.LogWarning(v);
 
             if (NetConfig.logFilter >= JHSLogFilter.Developer)
                 Console.WriteLine(v);
@@ -31,7 +29,7 @@ namespace JHSNetProtocol
         public static void Log(object v)
         {
             if (LogReciver != null)
-                LogReciver.Info(v);
+                LogReciver.Log(v);
             if (NetConfig.logFilter >= JHSLogFilter.Developer)
                 Console.WriteLine(v);
         }
@@ -39,7 +37,7 @@ namespace JHSNetProtocol
         public static void LogError(string v)
         {
             if (LogReciver != null)
-                LogReciver.Error(v);
+                LogReciver.LogError(v);
             if (NetConfig.logFilter >= JHSLogFilter.Developer)
                 Console.WriteLine(v);
         }
@@ -47,7 +45,7 @@ namespace JHSNetProtocol
         public static void LogError(object v)
         {
             if (LogReciver != null)
-                LogReciver.Error(v);
+                LogReciver.LogError(v);
             if (NetConfig.logFilter >= JHSLogFilter.Developer)
                 Console.WriteLine(v);
         }

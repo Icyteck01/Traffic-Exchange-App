@@ -1,10 +1,12 @@
-﻿using log4net;
+﻿using JHSNetProtocol;
+using log4net;
+using SurfSharkServer;
 using System;
 using System.Reflection;
 
-public class LOG
+public class LOG : IJHSLogger
 {
-    private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+    public static ILog log = LogManager.GetLogger(typeof(Program));
 
     public static void Error(string v)
     {
@@ -39,5 +41,25 @@ public class LOG
     public static void Network(string v)
     {
         log.Debug(v);
+    }
+
+    public void LogWarning(string v)
+    {
+        Warning(v);
+    }
+
+    public void Log(object v)
+    {
+        Info(v.ToString());
+    }
+
+    public void LogError(string v)
+    {
+        Error(v);
+    }
+
+    public void LogError(object v)
+    {
+        Error(v.ToString());
     }
 }

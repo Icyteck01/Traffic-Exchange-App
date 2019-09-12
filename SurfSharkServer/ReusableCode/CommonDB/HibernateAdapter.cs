@@ -117,7 +117,7 @@ namespace CommonDB
             {
                 if (paramClass != null)
                 {
-                    GetSession().Delete(paramClass);
+                    GetSession().Delete(GetSession().Merge(paramClass));
                     transaction.Commit();
                     deleted = true;
                 }
@@ -141,23 +141,12 @@ namespace CommonDB
             return (T)session.Get(typeof(T), ID);
         }
 
-        public T Save<T>(params T[] entities)
+        public T Save<T> (T entity)
         {
             T v = default;
             using (ITransaction transaction = GetSession().BeginTransaction())
             {
-                foreach (T entity in entities)
-                {
-                    try
-                    {
-                        PK d = (PK)GetSession().Save(entity);
-                        v = Get<T>(d);
-                    }
-                    catch (Exception)
-                    {
-                       v = (T)GetSession().Merge(entity);
-                    }
-                }
+                v = (T)GetSession().Merge(entity);               
                 transaction.Commit();
             }
             return v;

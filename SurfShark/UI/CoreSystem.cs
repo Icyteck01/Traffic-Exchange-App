@@ -1,9 +1,10 @@
 ﻿using JHSEngine.Interfaces;
 using JHSEngine.Patterns.Mediator;
 using SurfShark.Core;
-using SurfSharkServer.Communication.Packets;
+using SurfShark.Properties;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using static SurfShark.Core.Constants.ProgramConst;
 
@@ -11,7 +12,7 @@ namespace SurfShark
 {
     public partial class CoreSystem : JMediator
     {
-        private Point lastLocation;
+        Point lastLocation;
 
         public CoreSystem()
         {
@@ -27,7 +28,7 @@ namespace SurfShark
                 {
                     if (scrn.Bounds.Contains(this.Location))
                     {
-                        this.Location = new Point(scrn.Bounds.Right - this.Width - 5, scrn.Bounds.Top + 5);
+                        this.Location = new Point(scrn.Bounds.Right - this.Width - 20, scrn.Bounds.Top + 20);
                         return;
                     }
                 }
@@ -71,24 +72,50 @@ namespace SurfShark
             MainComponent.Core.SendNotification(EVENT_RESIZE);
         }
 
-        private void Myurls_Click(object sender, EventArgs e)
+        private void OpenUrlEditor(object sender, EventArgs e)
         {
-            new UrlUtilityForm().ShowDialog(this);
+            MainComponent.Core.SendNotification(SHOW_URL_EDITOR);
         }
 
-        private void Buymins_Click(object sender, EventArgs e)
+        private void OnBuyCreditsClick(object sender, EventArgs e)
         {
-          //  System.Diagnostics.Process.Start("http://www.autosurf-traffic-exchange.com/Buy-Minutes?user=" + LoginDialog.Username);
+            //  System.Diagnostics.Process.Start("http://www.autosurf-traffic-exchange.com/Buy-Minutes?user=" + LoginDialog.Username);
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void OnOpenChatClick(object sender, EventArgs e)
         {
-
+            MainComponent.Core.SendNotification(SHOW_CHAT_WINDOW);
+        }
+        private Bitmap GetImage()
+        {
+            try
+            {
+                string path = Path.Combine(Path.GetTempPath() , MainCache.UserName + ".jpg");
+                if (File.Exists(path))
+                    return new Bitmap(new MemoryStream(File.ReadAllBytes(path)));
+            }
+            catch { }
+            return Resources.user_default_avatar;
         }
 
+        private void seaveImage(string filePath)
+        {
+            string path = Path.Combine(Path.GetTempPath(), MainCache.UserName + ".jpg");
+            File.WriteAllBytes(path, File.ReadAllBytes(filePath));
+            pictureBox2.BackgroundImage = GetImage();
+        }
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Function not implemented!");
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.FilterIndex = 1;
+                dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+                if (dialog.ShowDialog() == DialogResult.OK && File.Exists(dialog.FileName))
+                {
+               
+                    seaveImage(dialog.FileName);
+                }
+            }
         }
 
 
@@ -99,21 +126,20 @@ namespace SurfShark
 
         public override void HandleNotification(INotification notification)
         {
-            switch(notification.Name)
+            switch (notification.Name)
             {
                 case SHOW_MAIN:
-                    if (notification.Body is LoginResponse data)
-                    {
-                        MemberTypExd.Text = data.MemberType.ToString();
-                        Surfed.Text = data.SurfedSites.ToString();
-                        Minutes.Text = data.Credits.ToString();
-                        MainCache.Credit = data.Credits;
-                        MainCache.Urs = data.sites;
-                        return;
-                    }
-                    MainComponent.Core.SendNotification(SHOW_LOGIN);
+                    pictureBox2.BackgroundImage = GetImage();
+                    MemberTypExd.Text = MainCache.MemberType.ToString();
+                    Surfed.Text = MainCache.SurfedSites.ToString();
+                    Minutes.Text = MainCache.Credit.ToString();
                     break;
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            MainComponent.Core.SendNotification(START_SURFING);
         }
     }
 }

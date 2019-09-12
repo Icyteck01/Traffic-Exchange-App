@@ -126,7 +126,8 @@
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.textBox2.FontSize = JHUI.JTextBoxSize.Tall;
             this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Lines = new string[0];
+            this.textBox2.Lines = new string[] {
+        "optiplex"};
             this.textBox2.Location = new System.Drawing.Point(166, 171);
             this.textBox2.MaxLength = 32767;
             this.textBox2.Name = "textBox2";
@@ -139,6 +140,7 @@
             this.textBox2.Size = new System.Drawing.Size(363, 36);
             this.textBox2.Style = JHUI.JColorStyle.White;
             this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "optiplex";
             this.textBox2.TextWaterMark = "Password";
             this.textBox2.Theme = JHUI.JThemeStyle.Dark;
             this.textBox2.UseCustomFont = false;
@@ -169,7 +171,8 @@
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.FontSize = JHUI.JTextBoxSize.Tall;
             this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Lines = new string[0];
+            this.textBox1.Lines = new string[] {
+        "root"};
             this.textBox1.Location = new System.Drawing.Point(166, 129);
             this.textBox1.MaxLength = 32767;
             this.textBox1.Name = "textBox1";
@@ -182,6 +185,7 @@
             this.textBox1.Size = new System.Drawing.Size(363, 36);
             this.textBox1.Style = JHUI.JColorStyle.White;
             this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "root";
             this.textBox1.TextWaterMark = "Username";
             this.textBox1.Theme = JHUI.JThemeStyle.Dark;
             this.textBox1.UseCustomFont = false;

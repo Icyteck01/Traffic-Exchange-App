@@ -26,7 +26,7 @@ namespace SurfSharkServer.Communication.Packets
                 {
                     sites[i] = new SiteClass()
                     {
-                        UID = reader.ReadPackedUInt32(),
+                        SiteIndex = reader.ReadByte(),
                         WebsiteName = reader.ReadString(),
                         Url = reader.ReadString(),
                         Time = reader.ReadPackedUInt32(),
@@ -50,7 +50,7 @@ namespace SurfSharkServer.Communication.Packets
                 writer.Write((byte)sites.Length);
                 for (int i = 0; i < sites.Length; i++)
                 {
-                    writer.WritePackedUInt32(sites[i].UID);
+                    writer.Write((byte)sites[i].SiteIndex);
                     writer.Write(sites[i].WebsiteName);
                     writer.Write(sites[i].Url);
                     writer.WritePackedUInt32(sites[i].Time);

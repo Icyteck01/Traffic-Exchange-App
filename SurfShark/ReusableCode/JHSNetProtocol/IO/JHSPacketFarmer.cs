@@ -7,7 +7,7 @@ namespace JHSNetProtocol
     {
         List<byte> btbuf = new List<byte>();
         protected JHSNetworkWriter m_Writer = new JHSNetworkWriter();
-
+        protected JHSNetworkReader m_Reader = new JHSNetworkReader();
         public const int PACKAGE_HEADER_LEN = 6;
         public const uint PACKAGE_HEADER_ID = 1860168941;
 

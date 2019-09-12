@@ -44,7 +44,7 @@ namespace SurfShark
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(330, 346);
+            this.button1.Location = new System.Drawing.Point(264, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 20);
             this.button1.Style = JHUI.JColorStyle.White;
@@ -64,7 +64,7 @@ namespace SurfShark
             // 
             // 
             this.textBox2.CustomButton.Image = null;
-            this.textBox2.CustomButton.Location = new System.Drawing.Point(292, 2);
+            this.textBox2.CustomButton.Location = new System.Drawing.Point(203, 2);
             this.textBox2.CustomButton.Name = "";
             this.textBox2.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.textBox2.CustomButton.Style = JHUI.JColorStyle.White;
@@ -85,7 +85,7 @@ namespace SurfShark
             this.textBox2.SelectionLength = 0;
             this.textBox2.SelectionStart = 0;
             this.textBox2.ShortcutsEnabled = true;
-            this.textBox2.Size = new System.Drawing.Size(310, 20);
+            this.textBox2.Size = new System.Drawing.Size(221, 20);
             this.textBox2.Style = JHUI.JColorStyle.White;
             this.textBox2.TabIndex = 8;
             this.textBox2.TextWaterMark = "Enter message";
@@ -98,17 +98,17 @@ namespace SurfShark
             // 
             // chatTextBox
             // 
-            this.chatTextBox.Location = new System.Drawing.Point(13, 63);
+            this.chatTextBox.Location = new System.Drawing.Point(4, 63);
             this.chatTextBox.Name = "chatTextBox";
             this.chatTextBox.ReadOnly = true;
             this.chatTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.chatTextBox.Size = new System.Drawing.Size(392, 276);
+            this.chatTextBox.Size = new System.Drawing.Size(341, 276);
             this.chatTextBox.TabIndex = 9;
             this.chatTextBox.Text = "";
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(330, 33);
+            this.checkBox1.Location = new System.Drawing.Point(264, 33);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.OffText = "Off";
             this.checkBox1.OnText = "On";
@@ -124,19 +124,18 @@ namespace SurfShark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 378);
+            this.ClientSize = new System.Drawing.Size(348, 378);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.chatTextBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(417, 378);
+            this.MaximumSize = new System.Drawing.Size(348, 378);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(417, 378);
+            this.MinimumSize = new System.Drawing.Size(348, 378);
             this.Name = "ChatWindow";
             this.Resizable = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Surfing Chat";
             this.Theme = JHUI.JThemeStyle.Light;
             this.TopMost = true;

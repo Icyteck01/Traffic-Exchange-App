@@ -2,6 +2,7 @@
 using SurfSharkServer;
 using SurfSharkServer.com;
 using SurfSharkServer.Network;
+using SurfSharkServer.Network.Handlers;
 using System.Collections.Generic;
 
 public class SharkServer
@@ -53,11 +54,16 @@ public class SharkServer
     //    JHSNetworkServer.RegisterHandler(InternalMessages.RECIEVE, OnNetworkReceive);
         RegisterHandeler(NetworkConstants.LOGIN, new LoginHandler());
         RegisterHandeler(NetworkConstants.REGISTER, new RegisterHandler());
+        RegisterHandeler(NetworkConstants.UPDATE_SITE_DATA, new UpdateSiteDataHandler());
+        RegisterHandeler(NetworkConstants.GET_NEW_URL, new Ask4NewUrlHandler());
+        RegisterHandeler(NetworkConstants.CHAT, new ChatHandler());
+        RegisterHandeler(NetworkConstants.OPEN_CHAT, new ChatOpenHandler());
         string ListenIP = Program.configs.GetValue<string>("HOST");
         int ListenPort = Program.configs.GetValue<int>("PORT");
         int password = Program.configs.GetValue<int>("ServerPassword");
         int Version = Program.configs.GetValue<int>("Version");
         JHSNetworkServer.Start(ListenIP, ListenPort);
+        LOG.Error("No error, server started!");
     }
 
     private void OnNetworkReceive(JHSNetworkMessage netMsg)

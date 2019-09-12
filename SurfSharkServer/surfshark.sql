@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2019 at 08:53 AM
+-- Generation Time: Sep 12, 2019 at 10:40 AM
 -- Server version: 5.5.39
 -- PHP Version: 5.4.31
 
@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transactions`
+--
+
+CREATE TABLE IF NOT EXISTS `transactions` (
+`id` bigint(22) NOT NULL,
+  `UID` int(22) NOT NULL,
+  `credits` int(10) NOT NULL DEFAULT '0',
+  `status` int(1) NOT NULL DEFAULT '1' COMMENT '1 = Waiting else = Delevered'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `useraccounts`
 --
 
@@ -38,16 +51,9 @@ CREATE TABLE IF NOT EXISTS `useraccounts` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `loginTime` timestamp NULL DEFAULT NULL,
   `logoutTime` timestamp NULL DEFAULT NULL,
-  `loginSessionId` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `viewurls` text
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `useraccounts`
---
-
-INSERT INTO `useraccounts` (`UserId`, `userName`, `passWord`, `ip`, `lastKnownIp`, `MemberType`, `hwid`, `credits`, `createTime`, `loginTime`, `logoutTime`, `loginSessionId`) VALUES
-(1, 'root', 'XINkzrXqA41u32BnughuZWHnLQ+xYUpn', '127.0.0.1', '127.0.0.1', 0, NULL, 0, '2019-09-09 03:38:29', '2019-09-10 03:51:42', '0000-00-00 00:00:00', NULL),
-(2, 'root', 'XINkzrXqA41u32BnughuZWHnLQ+xYUpn', '127.0.0.1', '127.0.0.1', 0, NULL, 0, '2019-09-09 03:38:29', '2019-09-10 02:50:49', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -65,19 +71,17 @@ CREATE TABLE IF NOT EXISTS `userurls` (
   `Time` int(5) NOT NULL DEFAULT '60',
   `ViewCount` int(22) NOT NULL,
   `IsActive` int(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `userurls`
---
-
-INSERT INTO `userurls` (`id`, `UID`, `WebsiteName`, `region`, `url`, `Referral`, `Time`, `ViewCount`, `IsActive`) VALUES
-(1, 1, 'Test', 0, 'https://www.google.com/', 0, 60, 0, 0),
-(2, 1, 'test2', 0, 'https://gamejolt.com/games/Hex-Wars/421142', 0, 60, 323, 1);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `transactions`
+--
+ALTER TABLE `transactions`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `useraccounts`
@@ -96,15 +100,17 @@ ALTER TABLE `userurls`
 --
 
 --
+-- AUTO_INCREMENT for table `transactions`
+--
+ALTER TABLE `transactions`
+MODIFY `id` bigint(22) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+--
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-MODIFY `UserId` int(22) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `UserId` int(22) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `userurls`
 --
 ALTER TABLE `userurls`
-MODIFY `id` bigint(22) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+MODIFY `id` bigint(22) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;

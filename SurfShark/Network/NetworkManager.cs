@@ -4,9 +4,14 @@ using SurfShark.Communication.Packets;
 using SurfShark.Core;
 using SurfShark.Core.Constants;
 using SurfSharkServer.Communication.Packets;
+using SurfSharkServer.Communication.Packets.Data;
 using System;
+using System.Collections.Generic;
 using System.Timers;
 using Timer = System.Timers.Timer;
+using static SurfShark.Core.Constants.ProgramConst;
+using SurfShark.Network.Packets;
+using SurfSharkServer.Network.Packets;
 
 public class NetworkManager
 {
@@ -30,23 +35,57 @@ public class NetworkManager
             return s_Instance;
         }
     }
-    Timer NetworkUpdate;
 
     public void Connect()
     {
-        JHSNetworkClient.Start("127.0.0.1", 10000);
+        JHSNetworkClient.Start("86.122.52.0", 7777);
         JHSNetworkClient.RegisterHandler(InternalMessages.CONNECTED, CONNECTED_TO_SERVER);
         JHSNetworkClient.RegisterHandler(InternalMessages.DISCONNECT, DISCONNECTED_PERMANENT);
         JHSNetworkClient.RegisterHandler(InternalMessages.DISCONNECT_BUT_WILL_RECONNECT, DISCONNECTED_FROM_SERVER);
         JHSNetworkClient.RegisterHandler(NetworkConstants.LOGIN, OnLogin);
         JHSNetworkClient.RegisterHandler(NetworkConstants.REGISTER, OnRegister);
-        NetworkUpdate = new Timer();
-        NetworkUpdate.Elapsed += OnTimedEvent;
-        NetworkUpdate.Interval = 500; // in miliseconds
-        NetworkUpdate.Start();
+        JHSNetworkClient.RegisterHandler(NetworkConstants.UPDATE_SITE_DATA, OnDataUpdatedSuccesfuly);
+        JHSNetworkClient.RegisterHandler(NetworkConstants.GET_NEW_URL, OnRecNewSurfSite);
+        JHSNetworkClient.RegisterHandler(NetworkConstants.CHAT, OnChatRecieve);
+        LateInvoker.InvokeRepeating(OnTimedEvent, 0.1f);
     }
 
-    private void OnTimedEvent(object sender, ElapsedEventArgs e)
+    private void OnChatRecieve(JHSNetworkMessage netMsg)
+    {
+        ChatMsg packet = netMsg.ReadMessage<ChatMsg>();
+        if(packet != null)
+        {
+            MainCache.chatList.Add(packet);
+            MainComponent.Core.SendNotification(REFRESH_CHAT_WINDOW);
+        }
+    }
+
+    private void OnRecNewSurfSite(JHSNetworkMessage netMsg)
+    {
+        UrlDetails packet = netMsg.ReadMessage<UrlDetails>();
+        if (packet != null)
+        {
+            MainCache.Credit += MainCache.AddCredit;
+            MainCache.SurfedSites += 1;
+            MainComponent.Core.SendNotification(SHOW_MAIN);
+            MainComponent.Core.SendNotification(GOT_NEW_URL, packet);
+        }
+    }
+
+    private void OnDataUpdatedSuccesfuly(JHSNetworkMessage netMsg)
+    {
+        SubmitDataForUpdate data = netMsg.ReadMessage<SubmitDataForUpdate>();
+        if(data != null && data.Code == ErrorCodes.JUST_DATA_UPDATE)
+        {
+            SitesManager.Init(data.Changed);
+        }
+        else
+        {
+            SitesManager.UpdateSuccess();
+        }
+    }
+
+    private void OnTimedEvent()
     {
         JHSNetworkClient.Update();
     }
@@ -71,6 +110,10 @@ public class NetworkManager
     {
         Connected = true;
         MainComponent.Core.SendNotification(ProgramConst.SHOW_PROPMPT, "Connected to server.");
+        if(MainComponent.state == ProgramState.LOGGED_IN)
+        {
+            MainComponent.Core.SendNotification(DO_LOGIN, new string[] { MainCache.UserName, MainCache.PassWord });
+        }
     }
     private void OnRegister(JHSNetworkMessage netMsg)
     {
@@ -106,8 +149,13 @@ public class NetworkManager
             switch(packet.Code)
             {
                 case ErrorCodes.SUCCESS:
+                    MainCache.Credit = packet.Credits;
+                    SitesManager.Init(packet.sites);
+                    MainCache.MemberType = packet.MemberType;
+                    MainCache.SurfedSites = packet.SurfedSites;
                     MainCache.LoggedIn = true;
-                    MainComponent.Core.SendNotification(ProgramConst.SHOW_MAIN, packet);
+                    MainComponent.Core.SendNotification(ProgramConst.SHOW_MAIN);
+                    MainComponent.state = ProgramState.LOGGED_IN;
                     break;
                 case ErrorCodes.WRONG_PASSWORD:
                     string msg = "Wrong username or password!";

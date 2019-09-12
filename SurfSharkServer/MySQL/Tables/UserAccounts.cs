@@ -17,5 +17,20 @@ namespace SurfSharkServer.MySQL.Tables
         public virtual DateTime createTime { get; set; }
         public virtual DateTime logoutTime { get; set; }
         public virtual DateTime loginTime { get; set; }
+
+        public virtual string viewurls { get; set; }
+        public override bool Equals(object obj)
+        {
+            if (obj is UserAccounts site)
+            {
+                if (site.UserId == UserId)
+                    return true;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return UserId.GetHashCode();
+        }
     }
 }

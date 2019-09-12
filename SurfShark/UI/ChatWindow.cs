@@ -1,11 +1,15 @@
-﻿using JHSEngine.Patterns.Mediator;
-using SurfShark.Communication.Packets;
+﻿using JHSEngine.Interfaces;
+using JHSEngine.Patterns.Mediator;
+using JHUI;
+using JHUI.Utils;
 using SurfShark.Core;
-using SurfShark.Core.Constants;
+using SurfSharkServer.Network.Packets;
 using System;
+using System.Drawing;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static SurfShark.Core.Constants.ProgramConst;
 
 namespace SurfShark
 {
@@ -14,6 +18,18 @@ namespace SurfShark
         public ChatWindow()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.Manual;
+            foreach (var scrn in Screen.AllScreens)
+            {
+                if (scrn.Bounds.Contains(this.Location))
+                {
+                    this.Location = new Point(scrn.Bounds.Right - this.Width - 20, scrn.Bounds.Top + 273);
+                    return;
+                }
+            }
+
+            //273
         }
         private string lastMSg = "";
         internal void LoadAll()
@@ -22,10 +38,10 @@ namespace SurfShark
             chatTextBox.Text = "";
             var sb = new StringBuilder();
             sb.Append(@"{\rtf1\ansi");
-            foreach (ChatResponse chat in MainCache.chatList)
+            foreach (ChatMsg chat in MainCache.chatList)
             {
-                string msg = chat.Message;
-                string UserName = chat.UserName;
+                string msg = chat.msg;
+                string UserName = chat.username;
                 if (msg.Length > 0 && msg != string.Empty)
                 {
                     if (IsNumeric(UserName))
@@ -52,7 +68,11 @@ namespace SurfShark
 
         private void OnBtnDownSend(object sender, EventArgs e)
         {
-
+            if(!MainCache.chatEnabled)
+            {
+                JMessageBox.Show(this, "Please click on enable chat box before you can send a message.");
+                return;
+            }
                 string msg = textBox2.Text;
                 string msgx = Regex.Replace(msg, @"\s+", "");
                 string xczxc = @"[^a-zA-Z0-9 :;,_!\?@()#$%\^&\*-+= < > ]";
@@ -61,12 +81,12 @@ namespace SurfShark
                 {
                     if (msgx.Length > 40)
                     {
-                        MessageBox.Show("Too many characters! Max 20!");
+                        JMessageBox.Show(this,"Too many characters! Max 20!");
                         return;
                     }
                     if (lastMSg.Equals(msg))
                     {
-                        MessageBox.Show("You already said that!");
+                        JMessageBox.Show(this,"You already said that!");
                         return;
                     }
                     if (!Regex.IsMatch(msg, xczxcx))
@@ -74,29 +94,23 @@ namespace SurfShark
 
                         Regex rgxp = new Regex(xczxc);
                         textBox2.Text = rgxp.Replace(msg, "");
-                        MessageBox.Show("InvalidCharacters");
+                        JMessageBox.Show(this,"InvalidCharacters");
                         return;
                     }
 
                     lastMSg = msg;
-                    ChatResponse cr = new ChatResponse
+                    ChatMsg cr = new ChatMsg
                     {
-                        Message = textBox2.Text
+                        msg = textBox2.Text
                     };
                     NetworkManager.Send(NetworkConstants.CHAT, cr);
                     textBox2.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show("Please write somthing!");
+                    JMessageBox.Show(this,"Please write somthing!");
                 }
             
-        }
-
-        private void ChatWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            MainComponent.Core.SendNotification(ProgramConst.EVENT_RESIZE);      
-            this.Hide();
         }
 
         private void TextBox2_KeyDown(object sender, KeyPressEventArgs e)
@@ -107,9 +121,39 @@ namespace SurfShark
             }
         }
 
+        float LastOpenChatSentCmd = 0;
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (LastOpenChatSentCmd > Time.time)
+            {
+                checkBox1.Checked = MainCache.chatEnabled;
+                return;
+            }
+            LastOpenChatSentCmd = Time.time + 1f; // PREVENT SPAM
             MainCache.chatEnabled = checkBox1.Checked;
+            NetworkManager.Send(NetworkConstants.OPEN_CHAT, new UserOpenChat() { isopen = MainCache.chatEnabled });
+        }
+
+        public override string[] ListNotificationInterests()
+        {
+            return new string[] { SHOW_CHAT_WINDOW, REFRESH_CHAT_WINDOW };
+        }
+
+        public override void HandleNotification(INotification notification)
+        {
+            switch(notification.Name)
+            {
+                case SHOW_CHAT_WINDOW:
+                case REFRESH_CHAT_WINDOW:
+                    LoadAll();
+                    break;
+            }
+        }
+
+        private void ChatWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            MainComponent.Core.SendNotification(SHOW_CHAT_WINDOW);
         }
     }
 }

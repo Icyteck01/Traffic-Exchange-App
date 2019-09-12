@@ -17,5 +17,19 @@ namespace SurfSharkServer.MySQL.Tables
         public virtual uint ViewCount { get; set; }
         public virtual int Region { get; set; }
         public virtual int Referral { get; set; }
-}
+
+        public override bool Equals(object obj)
+        {
+            if (obj is UserUrls site)
+            {
+                if (site.id == id && site.UID == UID)
+                    return true;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (id + UID).GetHashCode();
+        }
+    }
 }

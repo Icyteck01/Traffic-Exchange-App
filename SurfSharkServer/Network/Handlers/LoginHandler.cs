@@ -26,14 +26,15 @@ namespace SurfSharkServer.Network
                     {
                         if (PasswordUtils.ComparePasswords(user.Password, packet.Password))
                         {
-                            lock(user)
-                            {
+                            uint connectionId = netmsg.conn.connectionId;
+                            lock (user) {
                                 user._data.loginTime = DateTime.UtcNow;
                                 user._data.lastKnownIp = user._data.ip;
                                 user._data.ip = netmsg.conn.IP;
-                                user.Sites = userManager.GetUserSites(user.UID);
+                                user.SetSites(userManager.GetUserSites(user.UserId));
                             }
-                            DbService.SubmitUpdate2Queue(user.UID, user._data);
+                            DbService.SubmitUpdate2Queue(user.UserId, user._data);
+                            userManager.AddOnline(connectionId, user);
                             LoginResponse response = new LoginResponse
                             {
                                 Code = SUCCESS,
@@ -52,7 +53,6 @@ namespace SurfSharkServer.Network
                     netmsg.conn.Send(NetworkConstants.LOGIN, new LoginResponse() { Code = WRONG_PASSWORD});
                     return true;
                 }
-
                 netmsg.conn.Send(NetworkConstants.LOGIN, new LoginResponse() { Code = WRONG_PASSWORD });
             }
             return true;

@@ -94,10 +94,10 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(118, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
+            this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.Style = JHUI.JColorStyle.White;
             this.label3.TabIndex = 5;
-            this.label3.Text = "Minutes:";
+            this.label3.Text = "Seconds:";
             this.label3.Theme = JHUI.JThemeStyle.Light;
             // 
             // label4
@@ -132,6 +132,7 @@
             this.button1.Theme = JHUI.JThemeStyle.Light;
             this.button1.UseSelectable = true;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // MemberTypExd
             // 
@@ -263,7 +264,7 @@
             this.myurls.Theme = JHUI.JThemeStyle.Light;
             this.myurls.UseSelectable = true;
             this.myurls.UseVisualStyleBackColor = false;
-            this.myurls.Click += new System.EventHandler(this.Myurls_Click);
+            this.myurls.Click += new System.EventHandler(this.OpenUrlEditor);
             // 
             // button3
             // 
@@ -297,14 +298,14 @@
             this.buymins.Theme = JHUI.JThemeStyle.Light;
             this.buymins.UseSelectable = true;
             this.buymins.UseVisualStyleBackColor = false;
-            this.buymins.Click += new System.EventHandler(this.Buymins_Click);
+            this.buymins.Click += new System.EventHandler(this.OnBuyCreditsClick);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(10, 34);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(101, 101);
@@ -328,7 +329,7 @@
             this.button2.Theme = JHUI.JThemeStyle.Light;
             this.button2.UseSelectable = true;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.button2.Click += new System.EventHandler(this.OnOpenChatClick);
             // 
             // jLabel1
             // 

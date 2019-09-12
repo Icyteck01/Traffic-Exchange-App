@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Timers;
 using CommonDB.model;
+using JHSNetProtocol;
 using NHibernate;
 
 namespace CommonDB
@@ -31,10 +33,10 @@ namespace CommonDB
         #endregion
 
         #region VARS
-        private static readonly ConcurrentDictionary<string, CacheObject<uint>> ENTITYS = new ConcurrentDictionary<string, CacheObject<uint>>();
-        private static readonly ConcurrentQueue<string> UPDATE_QUEUE = new ConcurrentQueue<string>();
+        private static readonly Dictionary<string, CacheObject<uint>> ENTITYS = new Dictionary<string, CacheObject<uint>>();
+        private static readonly List<string> UPDATE_QUEUE = new List<string>();
 
-        public int UpdateEvery = 100;
+        public int UpdateEvery = 10;
 
         static HibernateAdapter<uint> _HAdapter = null;
         public HibernateAdapter<uint> HAdapter
@@ -53,15 +55,12 @@ namespace CommonDB
         #region CONSTRUCTOR
         public DbService()
         {
-            Timer aTimer = new Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = UpdateEvery * 1000;
-            aTimer.Enabled = true;
+            LateInvoker.InvokeRepeating(OnTimedEvent, UpdateEvery * 1000);
         }
         #endregion
 
         #region LOGIC
-        void OnTimedEvent(object sender, ElapsedEventArgs e)
+        void OnTimedEvent()
         {
             RunUpdate();
         }
@@ -71,113 +70,144 @@ namespace CommonDB
             return typeof(T).Name + "_" + key;
         }
 
-        T Get<T>(uint key, bool IsGetFromDb = false)
+        bool GetFromCache<T>(uint key, out T cacheObject)
         {
             string StrKey = GetKey<T>(key);
-            if (IsGetFromDb)
-            {
-                T d = HAdapter.Get<T>(key);
-                if (d is CacheObject<uint> e)
-                {
-                    return (T)e.GetEntity();
-                }
-                else
-                {
-                    e = CacheObject<uint>.ValueOf(key, d);
-                    ENTITYS.TryAdd(StrKey, e);
-                    return d;
-                }
-            }
-            else
+            bool rt = false;
+            T ex = default;
+            lock (ENTITYS)
             {
                 if (ENTITYS.TryGetValue(StrKey, out CacheObject<uint> e))
                 {
-                    return (T)e.GetEntity();
+                    ex = (T)e.GetEntity();
+                    rt = true;
                 }
-                else
-                {
-                    return Get<T>(key, true);
-                }
-
             }
+            cacheObject = ex;
+            return rt;
         }
 
         public void RemoveFromDB<T>(uint Id)
         {
             string Key = GetKey<T>(Id);
-            if (ENTITYS.TryRemove(Key, out CacheObject<uint> c))
+            lock (ENTITYS)
             {
-                Delete(c);
-            }
-            else
-            {
-                T ent = GetEntity<T>(Id);
-                if (ENTITYS.TryRemove(Key, out c))
+                if (ENTITYS.TryGetValue(Key, out CacheObject<uint> c))
                 {
-                    Delete(ent);
+                    Delete(c.GetEntity());
+                    ENTITYS.Remove(Key);
+                }
+                else
+                {
+                    if (GetFromCacheOrFromDB(Id, out T x))
+                    {
+                        ENTITYS.Remove(Key);
+                        Delete(x);
+                    }
                 }
             }
         }
 
-        public T GetEntity<T>(uint Key)
+        public bool GetFromCacheOrFromDB<T>(uint Key, out T obj)
         {
-            return Get<T>(Key);
+            if(GetFromCache(Key, out T x))
+            {
+                obj = x;
+                return true;
+            }
+            else
+            {
+                obj = HAdapter.Get<T>(Key);
+                if(obj != default)
+                {
+                    Put2ObjectMap(CacheObject<uint>.ValueOf(Key, obj));
+                }
+                return true;
+            }
         }
 
         void Put2ObjectMap(CacheObject<uint> x)
         {
-            ENTITYS.AddOrUpdate(x.GetKey(), x, (string arg1, CacheObject<uint> arg2) => x);
+            lock(ENTITYS)
+                ENTITYS[x.GetKey()] = x;
         }
 
-        public void ISubmitUpdate2Queue<T>(uint Key, T Entity)
+        public void ISubmitUpdate2Queue(uint Key, object Entity)
         {
             if (Entity is CacheObject<uint> x)
             {
                 Put2ObjectMap(x); // UPDATE OBJECT IN LIST
-                UPDATE_QUEUE.Enqueue(x.GetKey());
+                lock(UPDATE_QUEUE)
+                    if(!UPDATE_QUEUE.Contains(x.GetKey()))
+                        UPDATE_QUEUE.Add(x.GetKey());
             }
             else
             {
                 x = CacheObject<uint>.ValueOf(Key, Entity);
                 Put2ObjectMap(x);
-                UPDATE_QUEUE.Enqueue(x.GetKey());
+                lock (UPDATE_QUEUE)
+                    if (!UPDATE_QUEUE.Contains(x.GetKey()))
+                        UPDATE_QUEUE.Add(x.GetKey());
             }
         }
 
-        public void IUpdateEntityIntime<T>(uint Key, T Entity)
+        public void IUpdateEntityIntime(uint Key, object Entity)
         {
             if (Entity is CacheObject<uint> x)
             {
                 Put2ObjectMap(x); // UPDATE OBJECT IN LIST
                 Update(x.GetEntity());
+                lock (UPDATE_QUEUE)
+                    UPDATE_QUEUE.Remove(x.GetKey());
             }
             else
             {
                 x = CacheObject<uint>.ValueOf(Key, Entity);
                 Put2ObjectMap(x);
                 Update(x.GetEntity());
+                lock (UPDATE_QUEUE)
+                    UPDATE_QUEUE.Remove(x.GetKey());
             }
         }
 
         public T ICreateEntity<T>(T Entity)
         {
-            return Save<T>(Entity);
+            return Save(Entity);
+        }
+
+        private bool TryDequeue(out string data)
+        {
+            string r = null;
+            lock (UPDATE_QUEUE)
+            {
+                if(UPDATE_QUEUE.Count > 0)
+                {
+                    r = UPDATE_QUEUE[0];
+                    UPDATE_QUEUE.RemoveAt(0);
+                }
+            }
+            data = r;
+            return r != null;
         }
 
         void RunUpdate()
         {
-            if (UPDATE_QUEUE.TryDequeue(out string ekey))
+            if (TryDequeue(out string ekey))
             {
-                if (ENTITYS.TryGetValue(ekey, out CacheObject<uint> entity))
+                lock (ENTITYS)
                 {
-                    if (entity.IsValidate())
+                    if (ENTITYS.TryGetValue(ekey, out CacheObject<uint> entity))
                     {
-                        Update(entity.GetEntity());
-                    }
-                    else
-                    {
-                        Update(entity.GetEntity());
-                        ENTITYS.TryRemove(ekey, out CacheObject<uint> c);
+                        if (entity.IsValidate())
+                        {
+                            Update(entity.GetEntity());
+                        }
+                        else
+                        {
+                            Update(entity.GetEntity());
+
+                            ENTITYS.Remove(ekey);
+                        }
                     }
                 }
             }
@@ -187,20 +217,24 @@ namespace CommonDB
         {
             return HAdapter.GetSession();
         }
+
         bool IForceQuit()
         {
-            while (UPDATE_QUEUE.TryDequeue(out string ekey))
+            while (TryDequeue(out string ekey))
             {
-                if (ENTITYS.TryGetValue(ekey, out CacheObject<uint> entity))
+                lock (ENTITYS)
                 {
-                    if (entity.IsValidate())
+                    if (ENTITYS.TryGetValue(ekey, out CacheObject<uint> entity))
                     {
-                        Update(entity.GetEntity());
-                    }
-                    else
-                    {
-                        Update(entity.GetEntity());
-                        ENTITYS.TryRemove(ekey, out CacheObject<uint> c);
+                        if (entity.IsValidate())
+                        {
+                            Update(entity.GetEntity());
+                        }
+                        else
+                        {
+                            Update(entity.GetEntity());
+                            ENTITYS.Remove(ekey);
+                        }
                     }
                 }
             }
@@ -209,24 +243,27 @@ namespace CommonDB
         #endregion
 
         #region LAZY 
-        public static void SubmitUpdate2Queue<T>(uint Key, T Entity)
+        public static void SubmitUpdate2Queue(uint Key, object Entity)
         {
-            Instance.ISubmitUpdate2Queue<T>(Key, Entity);
+            Instance.ISubmitUpdate2Queue(Key, Entity);
         }
 
         public static T CreateEntity<T>(T Entity)
         {
-            return Instance.ICreateEntity<T>(Entity);
+            return Instance.ICreateEntity(Entity);
         }
 
-        public static void UpdateEntityIntime<T>(uint Key, T Entity)
+        public static void UpdateEntityIntime(uint Key, object Entity)
         {
-            Instance.IUpdateEntityIntime<T>(Key, Entity);
+            Instance.IUpdateEntityIntime(Key, Entity);
         }
 
         public static T GetFromCache<T>(uint Key)
         {
-            return Instance.GetEntity<T>(Key);
+            if(Instance.GetFromCacheOrFromDB(Key, out T obj))
+                return obj;
+
+            return default;
         }
 
         public static void RemoveEntityFromDatabase<T>(uint Key)

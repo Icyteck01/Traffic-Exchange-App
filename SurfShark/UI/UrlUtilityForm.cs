@@ -1,48 +1,29 @@
-﻿using CommonDB;
+﻿using JHSEngine.Interfaces;
 using JHSEngine.Patterns.Mediator;
-using Newtonsoft.Json;
-using SurfShark.Communication.Packets;
 using SurfShark.Core;
-using SurfShark.Core.Constants;
 using SurfSharkServer.Communication.Packets.Data;
 using SurfSharkServer.Network.Enums;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static SurfShark.Core.Constants.ProgramConst;
 
 namespace SurfShark
 {
     public partial class UrlUtilityForm : JMediator
     {
+        private bool Block = false;
         public UrlUtilityForm()
         {
             InitializeComponent();
-            PopulateList();
-            ToolTip toolTip1 = new ToolTip
-            {
-
-                // Set up the delays for the ToolTip.
-                AutoPopDelay = 5000,
-                InitialDelay = 100,
-                ReshowDelay = 500,
-                // Force the ToolTip text to be displayed whether or not the form is active.
-                ShowAlways = true
-            };
-
-            // Set up the ToolTip text for the Button and Checkbox.
-            toolTip1.SetToolTip(this.button7, "Please enter the Name of the Website you wish to promote.");
-            toolTip1.SetToolTip(this.button6, "Please enter the Address of the Website you wish you promote.");
-            toolTip1.SetToolTip(this.button5, "Choose the traffic source, this will show up as the origin of the Traffic.\nYou can leave it blank for Direct/Anonymous visit.");
-            toolTip1.SetToolTip(this.button4, "Specifiy the length of the visit in seconds.");
-            //refInp.Enabled = false;
         }
 
         private bool CheckURLValid(string source)
         {
-            Uri uriResult;
-            bool test = Uri.TryCreate(source, UriKind.Absolute, out uriResult) && uriResult.Scheme == Uri.UriSchemeHttp;
+            bool test = Uri.TryCreate(source, UriKind.Absolute, out Uri uriResult) && uriResult.Scheme == Uri.UriSchemeHttp;
             bool test2 = Uri.TryCreate(source, UriKind.Absolute, out uriResult) && uriResult.Scheme == Uri.UriSchemeHttps;
 
             if (test)
@@ -53,17 +34,16 @@ namespace SurfShark
             {
                 return true;
             }
-
             return false;
         }
 
-        private bool CheckUrlAlredyExists(string source, int index)
+        private bool CheckUrlAlredyExists(string source)
         {
-            string clined = source.ToString().Trim().ToLower();
-            foreach (SiteClass site in MainCache.Urs)
+            string newUrl = source.ToString().Trim().ToLower();
+            foreach (SiteClass site in SitesManager.Sites)
             {
-                string url = site.Url.ToString().Trim().ToLower();
-                if (clined.Equals(url) && site.UID != index)
+                string OldUrl = site.Url.ToString().Trim().ToLower();
+                if (newUrl.Equals(OldUrl))
                 {
                     return true;
                 }
@@ -71,26 +51,47 @@ namespace SurfShark
             return false;
         }
 
-        public void PopulateList()
+        public void InitializeEditor()
         {
-            foreach (SiteClass site in MainCache.Urs)
+            Block = true;
+            int index = 0;
+            if (SitesDataGrid.CurrentCell != null && SitesDataGrid.CurrentCell.RowIndex >= 0)
             {
-                listBox1.Rows.Add(site.WebsiteName);
+                index = SitesDataGrid.CurrentCell.RowIndex;
             }
+            SitesDataGrid.Rows.Clear();
+
+            foreach (SiteClass site in SitesManager.Sites)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(SitesDataGrid);
+                row.Cells[0].Value = site.WebsiteName;
+                row.Tag = site.SiteIndex;
+                SitesDataGrid.Rows.Add(row);
+            }
+            if (index >= SitesDataGrid.Rows.Count)
+                index = SitesDataGrid.Rows.Count - 1;
+
+            if (index > 0)
+            {
+                SitesDataGrid.Rows[index].Selected = true;
+                SitesDataGrid.CurrentCell = SitesDataGrid.Rows[index].Cells[0];
+            }
+
             region.Items.Clear();
-            foreach(string c in Enum.GetNames(typeof(CountryList)) )
-            {
 
+            foreach (string c in Enum.GetNames(typeof(CountryList)))
                 region.Items.Add(c);
-            }
+
             Referral.Items.Clear();
+
             foreach (string c in Enum.GetNames(typeof(ReferralType)))
-            {
-
                 Referral.Items.Add(c);
-            }
 
+            Block = false;
+            ListBox1_SelectionChanged(null,null);
         }
+
         public string GetAlexa(string URL)
         {
             string AlexaRank = "N/A";
@@ -113,12 +114,14 @@ namespace SurfShark
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            if (Block) return;
             try
             {
-                int total_items = listBox1.Rows.Count;
-                if (total_items < 5)
+                int total_items = SitesDataGrid.Rows.Count;
+                if (total_items < MainCache.MaxSlots)
                 {
-
+                    SitesManager.AddNew();
+                    InitializeEditor();
                 }
                 else
                 {
@@ -135,10 +138,19 @@ namespace SurfShark
 
         private void BtnPause_Click(object sender, EventArgs e)
         {
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
+            if (Block) return;
+            if (SitesDataGrid.CurrentCell != null && SitesDataGrid.CurrentCell.RowIndex >= 0)
             {
-                int selected = listBox1.CurrentCell.RowIndex;
-                uint status = MainCache.Urs[selected].UID;
+                int selected = (int)SitesDataGrid.Rows[SitesDataGrid.CurrentCell.RowIndex].Tag;
+                SiteClass site = SitesManager.GetByIndex(selected);
+                if (site != null)
+                {
+                    site.IsActive = site.IsActive ? false : true;
+                    if (site.operation != UpdateOperation.ADD_NEW)
+                        site.operation = UpdateOperation.CHANGED;
+
+                    SitesManager.UpdateSite(site);
+                }
 
             }
             else
@@ -150,19 +162,30 @@ namespace SurfShark
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
+            if (Block) return;
+            if (SitesDataGrid.CurrentCell != null && SitesDataGrid.CurrentCell.RowIndex >= 0)
             {
-                int selected = listBox1.CurrentCell.RowIndex;
+                int selected = (int)SitesDataGrid.Rows[SitesDataGrid.CurrentCell.RowIndex].Tag;
                 if (ConfirmDelete() == true)
                 {
-                   // int selectedID = MainCache.Urs[selected].id;
-                 //   NetworkManager.Send(NetworkConstants.REMOVE_SITE, new RemoveSite() { SiteId = (uint)selectedID });
-                   // CoreSystem.main.NetSend("" + selectedID, NetworkConstants.REMOVE_SITE, NetworkCommands.cmd2);
-                   // PopulateList();
+                    SiteClass site = SitesManager.GetByIndex(selected);
+                    if (site != null)
+                    {
+                        if (site.operation == UpdateOperation.ADD_NEW)
+                        {
+                            SitesManager.Delete(site);
+                        }
+                        else
+                        {
+                            site.operation = UpdateOperation.DELETE;
+                            SitesManager.UpdateSite(site);
+                        }
+                    }
+                    InitializeEditor();
                 }
-
-
-            } else {
+            }
+            else
+            {
 
                 MessageBox.Show("Please select a site!");
             }
@@ -173,51 +196,7 @@ namespace SurfShark
         {
             const string message = "Are you sure you want to delete this site?";
             const string caption = "Question:";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-                return true;
-            else
-                return false;
-        }
-
-        private void UrlUtilityForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            /*
-            if (UrlUtilityForm.somthing_changed)
-            {
-                if (CloseCancel() == true)
-                {
-                    string data = JsonConvert.SerializeObject(MainCache.Urs);
-                    string encoded = Encrypt.Encode(data);
-                    LoginInfo li = new LoginInfo
-                    {
-                        password = encoded,
-                        username = ""
-                    };
-                    var sz = JsonConvert.SerializeObject(li).ToString();
-                 //   CoreSystem.main.NetSend(sz, NetworkConstants.ADD_SITE, NetworkCommands.cmd1);
-                    MessageBox.Show("Changes saved!");
-                    UrlUtilityForm.somthing_changed = false;
-                }
-            }
-
-            MainComponent.Core.SendNotification(ProgramConst.EVENT_RESIZE);
-           // CoreSystem.isUtilOpen = false;
-            this.Hide();
-            */
-        }
-
-        public static bool CloseCancel()
-        {
-            const string message = "Would you like to save changes?";
-            const string caption = "Question:";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
+            var result = MessageBox.Show(message, caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 return true;
             else
@@ -226,10 +205,10 @@ namespace SurfShark
 
         private void Save_Click(object sender, EventArgs e)
         {
-
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
+            if (Block) return;
+            if (SitesDataGrid.CurrentCell != null && SitesDataGrid.CurrentCell.RowIndex >= 0)
             {
-                int selected = listBox1.CurrentCell.RowIndex;
+                int selected = (int)SitesDataGrid.Rows[SitesDataGrid.CurrentCell.RowIndex].Tag;
                 string nameInpx = nameInp.Text;
                 if (nameInpx.Length > 20)
                 {
@@ -249,39 +228,25 @@ namespace SurfShark
                     MessageBox.Show("Site URL invalid please use somthing like this:http://example.com");
                     return;
                 }
-                /*
-                if (selected >= 0)
+                SiteClass site = SitesManager.GetByIndex(selected);
+                if (site != null)
                 {
-                    if (CheckUrlAlredyExists(websiteInpx, MainCache.Urs[selected].UID))
-                    {
-                        MessageBox.Show("This url already exists in your sites!");
-                        return;
+                    site.WebsiteName = nameInpx;
+                    site.Url = websiteInpx;
+                    site.Time = (uint)secondsDrop.Value;
+                    site.Region = (CountryList)region.SelectedIndex;
+                    site.Referral = (ReferralType)Referral.SelectedIndex;
+                    if (site.operation != UpdateOperation.ADD_NEW)
+                        site.operation = UpdateOperation.CHANGED;
 
-                    }
-                 //   MainCache.Urs[selected].name = nameInpx;
-                 //   MainCache.Urs[selected].url = websiteInpx;
-                 //   MainCache.Urs[selected].refurl = refInpx;
-                 //   MainCache.Urs[selected].time = (int)secondsDrop.Value;
-                 //   somthing_changed = true;
-                    listBox1.Rows.Clear();
-                    PopulateList();
-                   
-                } */
+                    SitesManager.UpdateSite(site);
+                    InitializeEditor();
+                }
             }
 
         }
 
         #region HELP
-        private void Button7_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Please enter the Name of the Website you wish to promote.");
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Please enter the Address of the Website you wish you promote.");
-        }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Choose the traffic source, this will show up as the origin of the Traffic.\nYou can leave it blank for Direct/Anonymous visit.");
@@ -299,39 +264,22 @@ namespace SurfShark
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
+            if (Block) return;
+            if (SitesDataGrid.CurrentCell != null && SitesDataGrid.CurrentCell.RowIndex >= 0)
             {
-                int selected = listBox1.CurrentCell.RowIndex;
                 Preview pv = new Preview();
                 pv.Show();
                 pv.Navigate_to(websiteInp.Text);
             }
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
-            {
-                int selected = listBox1.CurrentCell.RowIndex;
-                MainCache.Urs[selected].Referral = (ReferralType)Referral.SelectedIndex;
-            }
-        }
-
-        private void Region_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
-            {
-                int selected = listBox1.CurrentCell.RowIndex;
-                MainCache.Urs[selected].Region = (CountryList)region.SelectedIndex;
-            }
-        }
-
         private void ListBox1_SelectionChanged(object sender, EventArgs e)
         {
-            if (listBox1.CurrentCell != null && listBox1.CurrentCell.RowIndex >= 0)
+            if (Block) return;
+            if (SitesDataGrid.CurrentCell != null && SitesDataGrid.CurrentCell.RowIndex >= 0)
             {
-                int selected = listBox1.CurrentCell.RowIndex;
-                SiteClass site = MainCache.Urs[selected];
+                 int selected = (int)SitesDataGrid.Rows[SitesDataGrid.CurrentCell.RowIndex].Tag;
+                SiteClass site = SitesManager.GetByIndex(selected);
                 if (site != null)
                 {
                     nameInp.Text = site.WebsiteName;
@@ -340,10 +288,32 @@ namespace SurfShark
                     hitsLabel.Text = site.ViewCount.ToString();
                     btnPause.Text = site.IsActive ? "Start" : "Pause";
                     AlexaRankLabel.Text = GetAlexa(site.Url);
-                    region.SelectedIndex = (int)site.Region;
-                    Referral.SelectedIndex = (int)site.Referral;
+                    region.SelectedIndex =  (int)site.Region >= 255 ? 0 : (int)site.Region;
+                    Referral.SelectedIndex = (int)site.Referral >= 255 ? 0 : (int)site.Referral;
                     labelStatus.Text = site.IsActive ? "Paused" : "Started";
                 }
+            }
+        }
+
+        private void UrlUtilityForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            MainComponent.Core.SendNotification(DO_UPDATE_SITES);
+            MainComponent.Core.SendNotification(SHOW_URL_EDITOR);
+        }
+
+        public override string[] ListNotificationInterests()
+        {
+            return new string[] { LOAD_URL_EDITOR };
+        }
+
+        public override void HandleNotification(INotification notification)
+        {
+            switch(notification.Name)
+            {
+                case LOAD_URL_EDITOR:
+                        InitializeEditor();
+                    break;
             }
         }
     }

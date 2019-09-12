@@ -1,0 +1,15 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SurfSharkServer" namespace="SurfSharkServer.MySQL.Tables">
+  <class name="UserUrls">
+    <id name="id" column="id" type="UInt32">
+      <generator class="native"></generator>
+    </id>
+    <property name="UID" column="UID" type="UInt32"></property>
+    <property name="WebsiteName" column="WebsiteName" type="String"></property>
+    <property name="url" column="url" type="String"></property>
+    <property name="Time" column="Time" type="UInt32"></property>
+    <property name="IsActive" column="IsActive" type="Int32"></property>
+    <property name="ViewCount" column="ViewCount" type="UInt32"></property>
+    <property name="Region" column="Region" type="Int32"></property>
+    <property name="Referral" column="Referral" type="Int32"></property>
+  </class>
+</hibernate-mapping>

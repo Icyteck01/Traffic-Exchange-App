@@ -2,7 +2,7 @@
 {
     public static class NetConfig
     {
-        public static JHSLogFilter logFilter = JHSLogFilter.Log;
+        public static JHSLogFilter logFilter = JHSLogFilter.Developer;
         public static int Port = 10001;
         public static string IP = "91.134.249.101";   
         public static bool UseStatistics = true;

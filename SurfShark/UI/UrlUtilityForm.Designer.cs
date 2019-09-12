@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UrlUtilityForm));
-            this.listBox1 = new JHUI.Controls.JDataGridView();
+            this.SitesDataGrid = new JHUI.Controls.JDataGridView();
             this.SiteName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.websiteInp = new JHUI.Controls.JTextBox();
             this.secondsDrop = new JHUI.Controls.JNumericUpDown();
@@ -46,8 +46,6 @@
             this.button1 = new JHUI.Controls.JButton();
             this.Referral = new JHUI.Controls.JComboBox();
             this.save = new JHUI.Controls.JButton();
-            this.button7 = new JHUI.Controls.JButton();
-            this.button6 = new JHUI.Controls.JButton();
             this.button5 = new JHUI.Controls.JButton();
             this.button4 = new JHUI.Controls.JButton();
             this.label2 = new JHUI.Controls.JLabel();
@@ -65,23 +63,23 @@
             this.hitsLabel = new JHUI.Controls.JLabel();
             this.label5 = new JHUI.Controls.JLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.listBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SitesDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondsDrop)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // SitesDataGrid
             // 
-            this.listBox1.AllowUserToAddRows = false;
-            this.listBox1.AllowUserToDeleteRows = false;
-            this.listBox1.AllowUserToResizeColumns = false;
-            this.listBox1.AllowUserToResizeRows = false;
-            this.listBox1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.listBox1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.SitesDataGrid.AllowUserToAddRows = false;
+            this.SitesDataGrid.AllowUserToDeleteRows = false;
+            this.SitesDataGrid.AllowUserToResizeColumns = false;
+            this.SitesDataGrid.AllowUserToResizeRows = false;
+            this.SitesDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.SitesDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SitesDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.SitesDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -89,8 +87,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listBox1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.listBox1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SitesDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.SitesDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SiteName});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -99,15 +97,15 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listBox1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.listBox1.EnableHeadersVisualStyles = false;
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.listBox1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.listBox1.Location = new System.Drawing.Point(9, 16);
-            this.listBox1.MultiSelect = false;
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ReadOnly = true;
-            this.listBox1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.SitesDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SitesDataGrid.EnableHeadersVisualStyles = false;
+            this.SitesDataGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.SitesDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.SitesDataGrid.Location = new System.Drawing.Point(9, 16);
+            this.SitesDataGrid.MultiSelect = false;
+            this.SitesDataGrid.Name = "SitesDataGrid";
+            this.SitesDataGrid.ReadOnly = true;
+            this.SitesDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -115,17 +113,17 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listBox1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.listBox1.RowHeadersVisible = false;
-            this.listBox1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.listBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.listBox1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listBox1.ShowEditingIcon = false;
-            this.listBox1.Size = new System.Drawing.Size(105, 199);
-            this.listBox1.Style = JHUI.JColorStyle.White;
-            this.listBox1.TabIndex = 0;
-            this.listBox1.Theme = JHUI.JThemeStyle.Dark;
-            this.listBox1.SelectionChanged += new System.EventHandler(this.ListBox1_SelectionChanged);
+            this.SitesDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.SitesDataGrid.RowHeadersVisible = false;
+            this.SitesDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.SitesDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SitesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SitesDataGrid.ShowEditingIcon = false;
+            this.SitesDataGrid.Size = new System.Drawing.Size(105, 199);
+            this.SitesDataGrid.Style = JHUI.JColorStyle.White;
+            this.SitesDataGrid.TabIndex = 0;
+            this.SitesDataGrid.Theme = JHUI.JThemeStyle.Dark;
+            this.SitesDataGrid.SelectionChanged += new System.EventHandler(this.ListBox1_SelectionChanged);
             // 
             // SiteName
             // 
@@ -170,6 +168,7 @@
             this.websiteInp.TabIndex = 1;
             this.websiteInp.TextWaterMark = "";
             this.websiteInp.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.websiteInp, "Address of the Website you wish you promote.");
             this.websiteInp.UseCustomFont = true;
             this.websiteInp.UseSelectable = true;
             this.websiteInp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -204,6 +203,7 @@
             this.secondsDrop.StyleManager = null;
             this.secondsDrop.TabIndex = 2;
             this.secondsDrop.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.secondsDrop, "Specifiy the length of the visit in seconds.");
             this.secondsDrop.UseAlternateColors = false;
             this.secondsDrop.UseSelectable = true;
             this.secondsDrop.UseStyleColors = false;
@@ -225,8 +225,6 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.Referral);
             this.groupBox1.Controls.Add(this.save);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label2);
@@ -291,7 +289,6 @@
             this.region.TabIndex = 10;
             this.region.Theme = JHUI.JThemeStyle.Dark;
             this.region.UseSelectable = true;
-            this.region.SelectedIndexChanged += new System.EventHandler(this.Region_SelectedIndexChanged_1);
             // 
             // label8
             // 
@@ -339,6 +336,7 @@
             this.btnPause.TabIndex = 4;
             this.btnPause.Text = "Pause";
             this.btnPause.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.btnPause, "Pause this site.");
             this.btnPause.UseSelectable = true;
             this.btnPause.UseVisualStyleBackColor = false;
             this.btnPause.Click += new System.EventHandler(this.BtnPause_Click);
@@ -357,11 +355,12 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Preview";
             this.button1.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.button1, "Preview this site.");
             this.button1.UseSelectable = true;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // comboBox1
+            // Referral
             // 
             this.Referral.BackColor = System.Drawing.Color.White;
             this.Referral.CutstomBorderColor = System.Drawing.Color.Transparent;
@@ -373,13 +372,14 @@
             "Google",
             "Custom"});
             this.Referral.Location = new System.Drawing.Point(6, 154);
-            this.Referral.Name = "comboBox1";
+            this.Referral.Name = "Referral";
             this.Referral.Size = new System.Drawing.Size(121, 25);
             this.Referral.Style = JHUI.JColorStyle.White;
             this.Referral.TabIndex = 7;
             this.Referral.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.Referral, "Choose the traffic source, this will show up as the origin of the Traffic.\\nYou c" +
+        "an leave it blank for Direct/Anonymous visit.");
             this.Referral.UseSelectable = true;
-            this.Referral.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // save
             // 
@@ -395,45 +395,10 @@
             this.save.TabIndex = 4;
             this.save.Text = "Save";
             this.save.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.save, "Save changes to this site.");
             this.save.UseSelectable = true;
             this.save.UseVisualStyleBackColor = false;
             this.save.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::SurfShark.Properties.Resources.gen_question_b_20;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.Transparent;
-            this.button7.Location = new System.Drawing.Point(546, 67);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(21, 20);
-            this.button7.Style = JHUI.JColorStyle.White;
-            this.button7.TabIndex = 5;
-            this.button7.Theme = JHUI.JThemeStyle.Dark;
-            this.button7.UseSelectable = true;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::SurfShark.Properties.Resources.gen_question_b_20;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.Location = new System.Drawing.Point(546, 110);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(21, 20);
-            this.button6.Style = JHUI.JColorStyle.White;
-            this.button6.TabIndex = 5;
-            this.button6.Theme = JHUI.JThemeStyle.Dark;
-            this.button6.UseSelectable = true;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button5
             // 
@@ -520,6 +485,7 @@
             this.nameInp.TabIndex = 1;
             this.nameInp.TextWaterMark = "";
             this.nameInp.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.nameInp, "Site name, only you can see this.");
             this.nameInp.UseCustomFont = true;
             this.nameInp.UseSelectable = true;
             this.nameInp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -581,6 +547,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add New Site";
             this.btnAdd.Theme = JHUI.JThemeStyle.Dark;
+            this.toolTip1.SetToolTip(this.btnAdd, "Add a new url.");
             this.btnAdd.UseSelectable = true;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
@@ -589,7 +556,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.groupBox2.BorderStyle = JHUI.Controls.JGroupBox.BorderMode.Header;
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.SitesDataGrid);
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.DrawBottomLine = false;
             this.groupBox2.DrawShadows = false;
@@ -638,7 +605,7 @@
             this.groupBox3.Theme = JHUI.JThemeStyle.Dark;
             this.groupBox3.UseStyleColors = false;
             // 
-            // label9
+            // AlexaRankLabel
             // 
             this.AlexaRankLabel.AutoSize = true;
             this.AlexaRankLabel.DropShadowColor = System.Drawing.Color.Black;
@@ -646,7 +613,7 @@
             this.AlexaRankLabel.FontSize = JHUI.JLabelSize.Small;
             this.AlexaRankLabel.Location = new System.Drawing.Point(415, 16);
             this.AlexaRankLabel.MinimumSize = new System.Drawing.Size(103, 13);
-            this.AlexaRankLabel.Name = "label9";
+            this.AlexaRankLabel.Name = "AlexaRankLabel";
             this.AlexaRankLabel.Size = new System.Drawing.Size(13, 15);
             this.AlexaRankLabel.Style = JHUI.JColorStyle.White;
             this.AlexaRankLabel.TabIndex = 4;
@@ -667,7 +634,7 @@
             this.label10.Text = "Alexa Rank:";
             this.label10.Theme = JHUI.JThemeStyle.Dark;
             // 
-            // label7
+            // labelStatus
             // 
             this.labelStatus.AutoSize = true;
             this.labelStatus.DropShadowColor = System.Drawing.Color.Black;
@@ -675,8 +642,8 @@
             this.labelStatus.FontSize = JHUI.JLabelSize.Small;
             this.labelStatus.Location = new System.Drawing.Point(52, 16);
             this.labelStatus.MinimumSize = new System.Drawing.Size(103, 13);
-            this.labelStatus.Name = "label7";
-            this.labelStatus.Size = new System.Drawing.Size(103, 15);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(37, 15);
             this.labelStatus.Style = JHUI.JColorStyle.White;
             this.labelStatus.TabIndex = 3;
             this.labelStatus.Text = "Active";
@@ -744,7 +711,7 @@
             this.Text = "Sharky URL Manager";
             this.UseCustomBackColor = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UrlUtilityForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.listBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SitesDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondsDrop)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -757,7 +724,7 @@
 
         #endregion
 
-        private JHUI.Controls.JDataGridView listBox1;
+        private JHUI.Controls.JDataGridView SitesDataGrid;
         private JHUI.Controls.JTextBox websiteInp;
         private JHUI.Controls.JNumericUpDown secondsDrop;
         private JHUI.Controls.JGroupBox groupBox1;
@@ -771,8 +738,6 @@
         private JHUI.Controls.JTextBox nameInp;
         private JHUI.Controls.JGroupBox groupBox2;
         private JHUI.Controls.JButton button4;
-        private JHUI.Controls.JButton button7;
-        private JHUI.Controls.JButton button6;
         private JHUI.Controls.JButton button5;
         private JHUI.Controls.JGroupBox groupBox3;
         private JHUI.Controls.JLabel hitsLabel;

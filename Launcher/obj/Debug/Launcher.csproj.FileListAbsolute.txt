@@ -7,3 +7,4 @@ C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.csproj.Gener
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.csproj.CoreCompileInputs.cache
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Surfing Shark.exe
 C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Surfing Shark.pdb
+C:\Users\IcyTeck\source\repos\SurfShark\Launcher\obj\Debug\Launcher.csprojAssemblyReference.cache

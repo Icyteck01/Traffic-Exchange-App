@@ -45,31 +45,29 @@ namespace JHSNetProtocol
         {
             IPAddress ipAddress = IPAddress.Parse(IP);
             remoteEP = new IPEndPoint(ipAddress, Port);
-            try
+
+            if (connection != null && !connection.m_Disposed)
             {
-                if (connection != null && !connection.m_Disposed)
-                {
-                    connection.Dispose();
-                    connection = null;
-                }
-
-                connection = new JHSConnection();
-                connection.Init(true);
-
-                if (NetConfig.logFilter >= JHSLogFilter.Developer) JHSDebug.Log("JHSNetworkManager Connecting to Server reconnect attmpt:" + m_RecconectTry);
-                connection.m_socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp)
-                {
-                    Blocking = false
-                };
-                connection.m_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveBuffer, 1048576);
-                connection.m_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.SendBuffer, 1048576);
-                connection.m_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.DontLinger, 1);
-                connection.m_socket.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.NoDelay, 0);
-                connection.m_socket.BeginConnect(remoteEP, ConnectCallback, connection.m_socket);
-                Connecting = true;
-                PermaDisconnected = false;
+                connection.Dispose();
+                connection = null;
             }
-            catch { }
+
+            connection = new JHSConnection();
+            connection.Init(true);
+
+            if (NetConfig.logFilter >= JHSLogFilter.Developer) JHSDebug.Log("JHSNetworkManager Connecting to Server reconnect attmpt:" + m_RecconectTry);
+            connection.m_socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp)
+            {
+                Blocking = false
+            };
+            connection.m_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveBuffer, 1048576);
+            connection.m_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.SendBuffer, 1048576);
+            connection.m_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.DontLinger, 1);
+            connection.m_socket.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.NoDelay, 0);
+            connection.m_socket.BeginConnect(remoteEP, ConnectCallback, connection.m_socket);
+            Connecting = true;
+            PermaDisconnected = false;
+
         }
 
         private void ConnectCallback(IAsyncResult ar)
