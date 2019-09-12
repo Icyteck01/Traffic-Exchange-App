@@ -10,6 +10,11 @@ Tools used:
 - mysql-connector-net MySql.Data 8.0.17
 - hibernate-core NHibernate
 
+Features:
+- Login/Register/Manage Sites/Surf.
+- Real-time fully functional chat.
+- Reusable code.
+
 
 Some Screns:
 
